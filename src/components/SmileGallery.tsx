@@ -71,7 +71,7 @@ export default function SmileGallery() {
           <div className="lg:col-span-7 w-full">
             <div
               ref={containerRef}
-              className="relative w-full aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-2xl cursor-col-resize select-none border border-secondary/15 shadow-md touch-none"
+              className="relative w-full aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-2xl cursor-col-resize select-none border border-secondary/15 shadow-md touch-pan-y"
               onMouseDown={handleMouseDown}
               onTouchStart={handleTouchStart}
             >

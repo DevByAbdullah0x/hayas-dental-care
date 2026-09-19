@@ -86,7 +86,7 @@ export default function CostCalculator() {
         </div>
 
         {/* Filter Buttons - Horizontally scrollable on mobile */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 w-full sm:flex-wrap no-scrollbar">
           {filters.map((f) => (
             <button
               key={f.key}

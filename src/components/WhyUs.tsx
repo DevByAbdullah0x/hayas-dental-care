@@ -50,7 +50,7 @@ export default function WhyUs() {
           </div>
 
           {/* Dedicated isolated horizontal scroll container so page viewport NEVER scrolls sideways */}
-          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 pb-2">
+          <div className="overflow-x-auto w-full pb-2">
             <div className="min-w-[620px] rounded-2xl overflow-hidden bg-surface-container-lowest border border-[#1E6FFF]/20 shadow-sm">
               <div className="grid grid-cols-12 bg-[#121417] p-4 font-label-caps text-[11px] sm:text-[12px] font-bold text-white tracking-wider border-b border-[#1E6FFF]/30">
                 <div className="col-span-4 text-[#A9B1BA]">CLINICAL STANDARD</div>
