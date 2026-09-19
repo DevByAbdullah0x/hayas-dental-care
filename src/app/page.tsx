@@ -23,7 +23,7 @@ export default function Home() {
       </div>
 
       {/* Main Content with Mobile Bottom Bar spacing */}
-      <main className="w-full pt-20 sm:pt-24 md:pt-28 pb-20 md:pb-0 bg-surface min-h-screen">
+      <main className="w-full pt-20 sm:pt-24 md:pt-28 pb-20 md:pb-0 bg-background min-h-screen">
         <div className="flex flex-col w-full">
           {/* 1. Luxury Hero Experience */}
           <HeroSection />

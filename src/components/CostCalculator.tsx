@@ -70,17 +70,17 @@ export default function CostCalculator() {
   };
 
   return (
-    <section id="calculator-section" className="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-margin bg-white">
+    <section id="calculator-section" className="w-full py-14 sm:py-18 md:py-20 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2]">
       <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
         {/* Section Header */}
         <div className="flex flex-col gap-1">
-          <span className="font-label-caps text-[10px] sm:text-[11px] text-[#1E6FFF] font-bold tracking-wider uppercase">
+          <span className="font-label-caps text-[10px] sm:text-[11px] text-[#0F5C5E] font-bold tracking-wider uppercase">
             Upfront Transparency
           </span>
-          <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#1E6FFF] font-semibold tracking-tight">
+          <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#083F42] font-semibold tracking-tight">
             Interactive Treatment Cost Estimator
           </h2>
-          <p className="font-body-lg text-xs sm:text-sm md:text-base text-slate-600 max-w-2xl mt-1 leading-relaxed">
+          <p className="font-body-lg text-xs sm:text-sm md:text-base text-[#647070] max-w-2xl mt-1 leading-relaxed">
             Select the treatments you need, adjust quantities, and get an instant estimate — itemized with zero hidden fees.
           </p>
         </div>
@@ -93,8 +93,8 @@ export default function CostCalculator() {
               onClick={() => setActiveFilter(f.key)}
               className={`px-3.5 sm:px-4 py-2 rounded-full font-label-caps text-[10px] sm:text-[11px] font-bold transition-all whitespace-nowrap min-h-[40px] flex items-center justify-center ${
                 activeFilter === f.key
-                  ? "btn-neon shadow-sm text-white"
-                  : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200"
+                  ? "btn-primary shadow-sm text-white"
+                  : "bg-[#FFFFFF] text-[#647070] hover:text-[#083F42] border border-[#DDE5E2]"
               }`}
               type="button"
             >
@@ -115,8 +115,8 @@ export default function CostCalculator() {
                   key={item.id}
                   className={`p-3.5 sm:p-4 rounded-2xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 ${
                     isChecked
-                      ? "bg-blue-50/40 border-[#1E6FFF] shadow-sm"
-                      : "bg-slate-50 border-slate-200 hover:border-slate-300"
+                      ? "bg-[#F0F5F4] border-[#0F5C5E] shadow-sm"
+                      : "bg-[#FFFFFF] border-[#DDE5E2] hover:border-[#0F5C5E]/30"
                   }`}
                 >
                   {/* Checkbox + Label (touch-friendly container) */}
@@ -130,42 +130,42 @@ export default function CostCalculator() {
                       checked={isChecked}
                       onChange={() => handleCheckToggle(item)}
                       onClick={(e) => e.stopPropagation()}
-                      className="mt-1 h-5 w-5 rounded border-slate-300 text-[#1E6FFF] focus:ring-[#1E6FFF] accent-[#1E6FFF] shrink-0 cursor-pointer"
+                      className="mt-1 h-5 w-5 rounded border-[#DDE5E2] text-[#0F5C5E] focus:ring-[#0F5C5E] accent-[#0F5C5E] shrink-0 cursor-pointer"
                     />
                     <label
                       htmlFor={`calc-item-${item.id}`}
                       className="flex flex-col gap-0.5 cursor-pointer min-w-0"
                     >
-                      <span className="font-body-md text-sm sm:text-[15px] font-semibold text-[#0f172a] leading-snug">
+                      <span className="font-body-md text-sm sm:text-[15px] font-semibold text-[#083F42] leading-snug">
                         {item.name}
                       </span>
-                      <span className="font-body-sm text-xs sm:text-[13px] text-slate-500 leading-snug">
+                      <span className="font-body-sm text-xs sm:text-[13px] text-[#647070] leading-snug">
                         {item.desc}
                       </span>
                     </label>
                   </div>
 
                   {/* Price + Quantity Stepper */}
-                  <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-200/60">
-                    <span className="font-body-md text-xs sm:text-sm font-bold text-[#1E6FFF] whitespace-nowrap">
+                  <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#DDE5E2]">
+                    <span className="font-body-md text-xs sm:text-sm font-bold text-[#0F5C5E] whitespace-nowrap">
                       PKR {item.price.toLocaleString()}
                     </span>
-                    <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-slate-200 shadow-2xs">
+                    <div className="flex items-center gap-1 bg-[#F8F6F1] p-1 rounded-full border border-[#DDE5E2]">
                       <button
                         onClick={() => handleQtyChange(item.id, -1)}
                         disabled={qty <= 1}
-                        className="w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center text-base font-bold hover:bg-slate-200 disabled:opacity-30 transition-all min-h-[36px] min-w-[36px]"
+                        className="w-9 h-9 rounded-full bg-[#FFFFFF] text-[#083F42] flex items-center justify-center text-base font-bold hover:bg-[#E2ECE9] disabled:opacity-30 transition-all min-h-[36px] min-w-[36px]"
                         aria-label={`Decrease quantity for ${item.name}`}
                         type="button"
                       >
                         −
                       </button>
-                      <span className="font-body-sm text-xs sm:text-sm font-bold text-[#0f172a] w-6 text-center">
+                      <span className="font-body-sm text-xs sm:text-sm font-bold text-[#083F42] w-6 text-center">
                         {qty}
                       </span>
                       <button
                         onClick={() => handleQtyChange(item.id, 1)}
-                        className="w-9 h-9 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center text-base font-bold hover:bg-slate-200 transition-all min-h-[36px] min-w-[36px]"
+                        className="w-9 h-9 rounded-full bg-[#FFFFFF] text-[#083F42] flex items-center justify-center text-base font-bold hover:bg-[#E2ECE9] transition-all min-h-[36px] min-w-[36px]"
                         aria-label={`Increase quantity for ${item.name}`}
                         type="button"
                       >
@@ -180,13 +180,13 @@ export default function CostCalculator() {
 
           {/* Right — Receipt Card (sticky on desktop) */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 w-full">
-            <div className="rounded-3xl bg-slate-50 border border-slate-200 p-5 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-sm">
-              <h3 className="font-headline-sm text-lg sm:text-xl font-bold text-[#0f172a]">
+            <div className="rounded-3xl bg-[#FFFFFF] border border-[#DDE5E2] p-5 sm:p-6 flex flex-col gap-4 sm:gap-5 shadow-soft">
+              <h3 className="font-headline-sm text-lg sm:text-xl font-bold text-[#083F42]">
                 Your Itemized Estimate
               </h3>
 
               {selectedEntries.length === 0 ? (
-                <p className="font-body-md text-xs sm:text-sm text-slate-500 py-3 leading-relaxed">
+                <p className="font-body-md text-xs sm:text-sm text-[#647070] py-3 leading-relaxed">
                   Select treatments on the left to build your personalized chairside quote.
                 </p>
               ) : (
@@ -195,25 +195,25 @@ export default function CostCalculator() {
                   <div className="flex flex-col gap-2 max-h-60 overflow-y-auto pr-1">
                     {selectedEntries.map(([id, item]) => (
                       <div key={id} className="flex items-center justify-between gap-2 text-xs sm:text-sm">
-                        <span className="font-body-md text-slate-700 truncate flex-1">
+                        <span className="font-body-md text-[#1E2929] truncate flex-1">
                           {item.name}
                           {item.qty > 1 && (
-                            <span className="text-slate-400 font-semibold"> × {item.qty}</span>
+                            <span className="text-[#647070] font-semibold"> × {item.qty}</span>
                           )}
                         </span>
-                        <span className="font-body-md font-semibold text-[#0f172a] whitespace-nowrap">
+                        <span className="font-body-md font-semibold text-[#083F42] whitespace-nowrap">
                           PKR {(item.price * item.qty).toLocaleString()}
                         </span>
                       </div>
                     ))}
                   </div>
 
-                  <hr className="border-slate-200" />
+                  <hr className="border-[#DDE5E2]" />
 
                   {/* Grand Total */}
                   <div className="flex items-center justify-between">
-                    <span className="font-title-md text-sm sm:text-base font-bold text-[#0f172a]">Grand Total</span>
-                    <span className="font-headline-sm text-lg sm:text-xl font-bold text-[#1E6FFF]">
+                    <span className="font-title-md text-sm sm:text-base font-bold text-[#083F42]">Grand Total</span>
+                    <span className="font-headline-sm text-lg sm:text-xl font-bold text-[#0F5C5E]">
                       PKR {grandTotal.toLocaleString()}
                     </span>
                   </div>
@@ -221,11 +221,11 @@ export default function CostCalculator() {
               )}
 
               {/* Disclaimer */}
-              <div className="flex items-start gap-2 p-3 rounded-xl bg-white border border-slate-200/80 text-xs">
-                <span className="material-symbols-outlined text-[18px] text-[#1E6FFF] mt-0.5 flex-shrink-0">
+              <div className="flex items-start gap-2 p-3 rounded-xl bg-[#F8F6F1] border border-[#DDE5E2] text-xs">
+                <span className="material-symbols-outlined text-[18px] text-[#0F5C5E] mt-0.5 flex-shrink-0">
                   info
                 </span>
-                <p className="font-body-sm text-[11px] sm:text-xs text-slate-600 leading-snug">
+                <p className="font-body-sm text-[11px] sm:text-xs text-[#647070] leading-snug">
                   This is an approximate estimate. Final quote is confirmed chairside by Dr. Aayisha before any procedure starts.
                 </p>
               </div>
@@ -246,7 +246,7 @@ export default function CostCalculator() {
 
                 <Link
                   href="#smart-booking"
-                  className="btn-neon w-full px-5 py-3.5 rounded-full font-label-ui text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-white min-h-[48px]"
+                  className="btn-primary w-full px-5 py-3.5 rounded-full font-label-ui text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-white min-h-[48px]"
                 >
                   <span className="material-symbols-outlined text-[18px]">
                     calendar_month

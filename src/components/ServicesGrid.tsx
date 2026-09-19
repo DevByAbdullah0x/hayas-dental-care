@@ -111,26 +111,26 @@ export default function ServicesGrid() {
   return (
     <section
       id="services-grid"
-      className="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-margin bg-slate-50"
+      className="w-full py-14 sm:py-18 md:py-20 px-4 sm:px-6 md:px-margin bg-[#F0F5F4] border-b border-[#DDE5E2]"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-space-xl">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="font-label-caps text-[10px] sm:text-[11px] text-[#1E6FFF] font-bold tracking-wider uppercase">
+            <span className="font-label-caps text-[10px] sm:text-[11px] text-[#0F5C5E] font-bold tracking-wider uppercase">
               Clinical Offerings
             </span>
-            <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#1E6FFF] font-semibold tracking-tight mt-1">
+            <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#083F42] font-semibold tracking-tight mt-1">
               Specialized Dental Procedures
             </h2>
-            <p className="font-body-lg text-sm sm:text-base text-slate-600 mt-1 max-w-2xl">
+            <p className="font-body-lg text-sm sm:text-base text-[#647070] mt-1 max-w-2xl">
               Evidence-based treatments delivered with modern equipment and
               compassionate chairside care.
             </p>
           </div>
           <Link
             href="#calculator-section"
-            className="inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-sm font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors py-2 min-h-[44px]"
+            className="inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-sm font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors py-2 min-h-[44px]"
           >
             <span>Calculate custom treatment estimate</span>
             <span
@@ -147,37 +147,37 @@ export default function ServicesGrid() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#1E6FFF]/50 flex flex-col justify-between gap-5 hover:shadow-lg transition-all"
+              className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDE5E2] hover:border-[#0F5C5E]/50 flex flex-col justify-between gap-5 shadow-soft hover:shadow-soft-lg transition-all"
             >
               {/* Top section */}
               <div className="flex flex-col gap-3 sm:gap-4">
                 {/* Icon & Duration Row */}
                 <div className="flex items-center justify-between">
                   <span
-                    className="material-symbols-outlined text-[26px] p-2.5 rounded-xl bg-[#1E6FFF]/10 text-[#1E6FFF]"
+                    className="material-symbols-outlined text-[24px] p-2.5 rounded-xl bg-[#F0F5F4] text-[#0F5C5E]"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     {service.icon}
                   </span>
-                  <span className="px-2.5 py-1 rounded-full font-label-caps text-[10px] sm:text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200/60">
+                  <span className="px-2.5 py-1 rounded-full font-label-caps text-[10px] sm:text-[11px] font-semibold bg-[#F8F6F1] text-[#647070] border border-[#DDE5E2]">
                     {service.duration}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-title-md text-base sm:text-lg font-bold text-[#0f172a]">
+                <h3 className="font-title-md text-base sm:text-lg font-bold text-[#083F42]">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="font-body-md text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-body-md text-xs sm:text-sm text-[#647070] leading-relaxed">
                   {service.desc}
                 </p>
 
                 {/* Detail Toggle Button (min 44px touch target) */}
                 <button
                   onClick={() => toggleDetail(service.id)}
-                  className="self-start inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-[13px] font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors min-h-[44px] py-1"
+                  className="self-start inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-[13px] font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors min-h-[44px] py-1"
                   type="button"
                   aria-expanded={!!openDetails[service.id]}
                 >
@@ -192,7 +192,7 @@ export default function ServicesGrid() {
 
                 {/* Expandable Steps */}
                 {openDetails[service.id] && (
-                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-body-md text-slate-700 flex flex-col gap-2 animate-fadeIn">
+                  <div className="p-3.5 rounded-xl bg-[#F8F6F1] border border-[#DDE5E2] text-xs font-body-md text-[#1E2929] flex flex-col gap-2 animate-fadeIn">
                     {service.steps.map((step) => (
                       <span key={step} className="leading-snug">{step}</span>
                     ))}
@@ -201,18 +201,18 @@ export default function ServicesGrid() {
               </div>
 
               {/* Price & Action Section (min 44px tap target) */}
-              <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
+              <div className="pt-3 border-t border-[#DDE5E2] flex items-center justify-between gap-3">
                 <div>
-                  <span className="font-label-caps text-[9px] sm:text-[10px] text-slate-400 tracking-wider block">
+                  <span className="font-label-caps text-[9px] sm:text-[10px] text-[#647070] tracking-wider block">
                     {service.priceLabel}
                   </span>
-                  <p className="font-title-md text-sm sm:text-base font-bold text-[#0f172a]">
+                  <p className="font-title-md text-sm sm:text-base font-bold text-[#083F42]">
                     {service.price}
                   </p>
                 </div>
                 <Link
                   href="#smart-booking"
-                  className="px-3.5 py-2.5 rounded-xl bg-[#1E6FFF]/10 text-[#1E6FFF] hover:bg-[#1E6FFF] hover:text-white transition-all font-label-ui text-xs font-semibold min-h-[44px] flex items-center justify-center"
+                  className="px-4 py-2 rounded-xl bg-[#F0F5F4] text-[#0F5C5E] border border-[#0F5C5E]/20 hover:bg-[#0F5C5E] hover:text-white transition-all font-label-ui text-xs font-semibold min-h-[40px] flex items-center justify-center"
                 >
                   Book Slot
                 </Link>

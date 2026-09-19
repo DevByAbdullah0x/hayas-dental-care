@@ -64,14 +64,14 @@ export default function SmileGallery() {
   }, [isDragging, updateSlider]);
 
   return (
-    <section id="smile-gallery" className="py-12 sm:py-16 md:py-space-xl bg-surface-container-low px-4 sm:px-6 md:px-margin">
+    <section id="smile-gallery" className="w-full py-14 sm:py-18 md:py-20 bg-[#FFFFFF] px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-space-xl items-start">
           {/* Slider — lg:col-span-7 */}
           <div className="lg:col-span-7 w-full">
             <div
               ref={containerRef}
-              className="relative w-full aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-2xl cursor-col-resize select-none border border-secondary/15 shadow-md touch-pan-y"
+              className="relative w-full aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-2xl cursor-col-resize select-none border border-[#DDE5E2] shadow-soft touch-pan-y"
               onMouseDown={handleMouseDown}
               onTouchStart={handleTouchStart}
             >
@@ -99,7 +99,7 @@ export default function SmileGallery() {
                 className="absolute top-0 bottom-0 w-1 bg-white shadow-lg pointer-events-none"
                 style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
               >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-[#1E6FFF] text-white rounded-full shadow-xl flex items-center justify-center border-2 border-white pointer-events-auto cursor-col-resize">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-[#0F5C5E] text-white rounded-full shadow-xl flex items-center justify-center border-2 border-[#C9A96E] pointer-events-auto cursor-col-resize">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 text-white"
@@ -113,12 +113,12 @@ export default function SmileGallery() {
               </div>
 
               {/* Before label */}
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-[#121417]/85 backdrop-blur-sm text-[#A9B1BA] text-[10px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full pointer-events-none border border-[#1E6FFF]/30">
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-[#1E2929]/80 backdrop-blur-sm text-white text-[10px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full pointer-events-none border border-white/20">
                 BEFORE: SHADE A3.5
               </div>
 
               {/* After label */}
-              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-[#1E6FFF] text-white text-[10px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full pointer-events-none shadow-md">
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-[#0F5C5E] text-white text-[10px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full pointer-events-none shadow-md">
                 AFTER: SHADE B1
               </div>
             </div>
@@ -127,45 +127,45 @@ export default function SmileGallery() {
           {/* Clinical whitening facts — lg:col-span-5 */}
           <div className="lg:col-span-5 space-y-5 sm:space-y-6 w-full">
             <div>
-              <span className="font-label-caps text-[10px] sm:text-[11px] text-[#1E6FFF] font-bold tracking-wider uppercase">
+              <span className="font-label-caps text-[10px] sm:text-[11px] text-[#0F5C5E] font-bold tracking-wider uppercase">
                 COSMETIC DENTISTRY RESULTS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-primary mt-1">Clinical Whitening Facts</h2>
+              <h2 className="font-headline-lg text-2xl sm:text-3xl font-bold text-[#083F42] mt-1">Clinical Whitening Facts</h2>
             </div>
 
             <div className="space-y-3 sm:space-y-4">
-              <div className="p-4 bg-surface-container-lowest rounded-xl border border-secondary/15 shadow-sm">
-                <h3 className="font-semibold text-sm sm:text-base text-primary mb-1">45-Minute Procedure</h3>
-                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <div className="p-4 bg-[#F8F6F1] rounded-xl border border-[#DDE5E2] shadow-xs">
+                <h3 className="font-semibold text-sm sm:text-base text-[#083F42] mb-1">45-Minute Procedure</h3>
+                <p className="text-xs sm:text-sm text-[#647070] leading-relaxed">
                   Our in-office whitening is completed in a single 45-minute session using
                   professional-grade hydrogen peroxide gel activated by LED light for maximum
                   efficacy.
                 </p>
               </div>
 
-              <div className="p-4 bg-surface-container-lowest rounded-xl border border-secondary/15 shadow-sm">
-                <h3 className="font-semibold text-sm sm:text-base text-primary mb-1">Gingival Barrier Gel</h3>
-                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <div className="p-4 bg-[#F8F6F1] rounded-xl border border-[#DDE5E2] shadow-xs">
+                <h3 className="font-semibold text-sm sm:text-base text-[#083F42] mb-1">Gingival Barrier Gel</h3>
+                <p className="text-xs sm:text-sm text-[#647070] leading-relaxed">
                   A protective resin barrier is applied to the gum line before treatment,
                   ensuring zero soft-tissue irritation throughout the whitening process.
                 </p>
               </div>
 
-              <div className="p-4 bg-surface-container-lowest rounded-xl border border-secondary/15 shadow-sm">
-                <h3 className="font-semibold text-sm sm:text-base text-primary mb-1">Zero Enamel Abrasion</h3>
-                <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              <div className="p-4 bg-[#F8F6F1] rounded-xl border border-[#DDE5E2] shadow-xs">
+                <h3 className="font-semibold text-sm sm:text-base text-[#083F42] mb-1">Zero Enamel Abrasion</h3>
+                <p className="text-xs sm:text-sm text-[#647070] leading-relaxed">
                   Our chemical whitening method works through oxidation — no abrasive compounds
                   touch the enamel surface, preserving tooth integrity completely.
                 </p>
               </div>
             </div>
 
-            <div className="p-5 bg-surface-container-lowest rounded-2xl border border-[#1E6FFF]/20 text-center shadow-sm">
-              <p className="text-xs sm:text-sm text-on-surface-variant mb-1">Special Session Fee</p>
-              <p className="text-2xl sm:text-3xl font-bold text-primary">PKR 18,000</p>
+            <div className="p-5 bg-[#F0F5F4] rounded-2xl border border-[#0F5C5E]/20 text-center shadow-xs">
+              <p className="text-xs sm:text-sm text-[#647070] mb-1">Special Session Fee</p>
+              <p className="font-headline-sm text-2xl sm:text-3xl font-bold text-[#083F42]">PKR 18,000</p>
               <Link
                 href="#smart-booking"
-                className="mt-3 inline-flex items-center justify-center btn-neon font-semibold px-6 py-3 rounded-full text-white text-xs sm:text-sm min-h-[44px] w-full sm:w-auto"
+                className="mt-3 inline-flex items-center justify-center btn-primary font-semibold px-6 py-3 rounded-full text-white text-xs sm:text-sm min-h-[44px] w-full sm:w-auto shadow-sm"
               >
                 Book Whitening Slot
               </Link>
