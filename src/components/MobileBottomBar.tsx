@@ -13,8 +13,12 @@ export default function MobileBottomBar() {
           href="tel:03035452839"
           aria-label="Call Haya's Dental Care"
         >
-          <span className="material-symbols-outlined text-[18px] text-[#0F5C5E] flex-shrink-0">call</span>
-          <span>Call</span>
+          <span className="w-5 h-5 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <span className="material-symbols-outlined text-[18px] leading-none w-[18px] h-[18px] flex items-center justify-center text-[#0F5C5E]">
+              call
+            </span>
+          </span>
+          <span className="leading-none">Call</span>
         </a>
 
         {/* 2. WhatsApp Button */}
@@ -25,8 +29,10 @@ export default function MobileBottomBar() {
           target="_blank"
           aria-label="Chat on WhatsApp"
         >
-          <WhatsAppIcon className="w-4.5 h-4.5 text-[#0F5C5E] flex-shrink-0" />
-          <span>WhatsApp</span>
+          <span className="w-5 h-5 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <WhatsAppIcon className="w-[18px] h-[18px] text-[#0F5C5E]" />
+          </span>
+          <span className="leading-none">WhatsApp</span>
         </a>
 
         {/* 3. Book Slot Button */}
@@ -35,8 +41,12 @@ export default function MobileBottomBar() {
           href="#smart-booking"
           aria-label="Book appointment slot"
         >
-          <span className="material-symbols-outlined text-[18px] text-[#C9A96E] flex-shrink-0">calendar_month</span>
-          <span>Book Slot</span>
+          <span className="w-5 h-5 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <span className="material-symbols-outlined text-[18px] leading-none w-[18px] h-[18px] flex items-center justify-center text-[#C9A96E]">
+              calendar_month
+            </span>
+          </span>
+          <span className="leading-none">Book Slot</span>
         </a>
       </div>
     </aside>
