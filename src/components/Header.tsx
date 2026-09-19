@@ -61,7 +61,7 @@ export default function Header() {
           </button>
           <img
             alt="Dr. Aayisha Quddus"
-            className="w-8 h-8 rounded-full object-cover object-top ml-1"
+            className="w-8 h-8 rounded-full object-cover ml-1"
             src="/dr-aayisha-quddus.jpg"
           />
         </div>

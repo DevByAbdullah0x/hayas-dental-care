@@ -165,7 +165,7 @@ export default function HeroSection() {
               <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md flex-shrink-0 bg-primary">
                 <img
                   alt="Dr. Aayisha Quddus BDS RDS C-Ortho"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
                   src="/dr-aayisha-quddus.jpg"
                 />
                 <span className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-secondary-fixed border-2 border-surface"></span>

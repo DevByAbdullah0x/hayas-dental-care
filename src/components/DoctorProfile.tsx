@@ -8,7 +8,7 @@ export default function DoctorProfile() {
           <div className="relative rounded-2xl overflow-hidden bg-surface-container-high shadow-lg aspect-square max-w-md mx-auto">
             <img
               alt="Dr. Aayisha Quddus Principal Surgeon"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover"
               src="/dr-aayisha-quddus.jpg"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
