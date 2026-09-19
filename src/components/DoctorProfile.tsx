@@ -8,8 +8,8 @@ export default function DoctorProfile() {
           <div className="relative rounded-2xl overflow-hidden bg-surface-container-high shadow-lg aspect-square max-w-md mx-auto">
             <img
               alt="Dr. Aayisha Quddus Principal Surgeon"
-              className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1UzSaZd0uIDbn7yQcH-fAPz3-x1l0nYy43EG4bomdyMQhrLjZ3bPR0Ncu9bbl0Cb5GxNhXnw8TJct5Jmn93cU8ro5TgjyTrf-_YZk-OD0g8KdZs0t-SQcWifEKQOefIQpVmFqlkSwpcWd75NCJ2zETKJi-Z_ROH444cdWJYurPp31jRkQRwQxA1yoNIPRitN0a5WeX3BLBLal_2ULYkJmYCyLOPDT4pM4gUnK9HNN_Pq52dPON1hR"
+              className="w-full h-full object-cover object-top"
+              src="/dr-aayisha-quddus.jpg"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
             <div className="absolute bottom-4 left-4 right-4 text-on-primary flex items-center justify-between">

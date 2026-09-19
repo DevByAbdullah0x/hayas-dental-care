@@ -60,9 +60,9 @@ export default function Header() {
             <span className="material-symbols-outlined text-[20px]">light_mode</span>
           </button>
           <img
-            alt="Profile"
-            className="w-8 h-8 rounded-full object-cover ml-1"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1UzSaZd0uIDbn7yQcH-fAPz3-x1l0nYy43EG4bomdyMQhrLjZ3bPR0Ncu9bbl0Cb5GxNhXnw8TJct5Jmn93cU8ro5TgjyTrf-_YZk-OD0g8KdZs0t-SQcWifEKQOefIQpVmFqlkSwpcWd75NCJ2zETKJi-Z_ROH444cdWJYurPp31jRkQRwQxA1yoNIPRitN0a5WeX3BLBLal_2ULYkJmYCyLOPDT4pM4gUnK9HNN_Pq52dPON1hR"
+            alt="Dr. Aayisha Quddus"
+            className="w-8 h-8 rounded-full object-cover object-top ml-1"
+            src="/dr-aayisha-quddus.jpg"
           />
         </div>
       </div>
