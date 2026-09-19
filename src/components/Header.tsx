@@ -1,34 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  const activeSectionRef = useRef<string>("");
+  const isClickScrollingRef = useRef<boolean>(false);
+  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMenu = () => setMobileMenuOpen((prev) => !prev);
   const closeMenu = () => setMobileMenuOpen(false);
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      closeMenu();
-      const targetId = href.substring(1);
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", href);
-      }
-    }
-  };
-
-  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    closeMenu();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    window.history.pushState(null, "", "/");
-  };
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -40,6 +25,127 @@ export default function Header() {
     { href: "#reviews-section", label: "Reviews" },
     { href: "#location-hours", label: "Location" },
   ];
+
+  // Scroll-spy via IntersectionObserver & scroll tracking
+  useEffect(() => {
+    // Check initial URL hash on mount
+    const initialHash = window.location.hash.replace("#", "");
+    if (initialHash) {
+      setActiveSection(initialHash);
+      activeSectionRef.current = initialHash;
+    }
+
+    const sectionIds = navLinks.map((link) => link.href.substring(1));
+    const sectionElements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sectionElements.length === 0) return;
+
+    // IntersectionObserver watches sections crossing vertical midpoint
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isClickScrollingRef.current) return;
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            if (activeSectionRef.current !== id) {
+              activeSectionRef.current = id;
+              setActiveSection(id);
+              window.history.replaceState(null, "", `#${id}`);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        // Active zone around viewport vertical midpoint
+        rootMargin: "-25% 0px -45% 0px",
+        threshold: 0,
+      }
+    );
+
+    sectionElements.forEach((el) => observer.observe(el));
+
+    // Scroll listener for hero top reset and page bottom edge
+    const handleScroll = () => {
+      if (isClickScrollingRef.current) return;
+
+      const scrollY = window.scrollY;
+
+      // When near top of the page (Hero), clear active section and URL hash
+      if (scrollY < 120) {
+        if (activeSectionRef.current !== "") {
+          activeSectionRef.current = "";
+          setActiveSection("");
+          if (window.location.hash) {
+            window.history.replaceState(null, "", window.location.pathname + window.location.search);
+          }
+        }
+        return;
+      }
+
+      // If scrolled to the very bottom, activate the last nav section
+      const isBottom = window.innerHeight + scrollY >= document.documentElement.scrollHeight - 50;
+      if (isBottom) {
+        const lastId = sectionIds[sectionIds.length - 1];
+        if (activeSectionRef.current !== lastId) {
+          activeSectionRef.current = lastId;
+          setActiveSection(lastId);
+          window.history.replaceState(null, "", `#${lastId}`);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+    };
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      closeMenu();
+      const targetId = href.substring(1);
+
+      // Immediately set that link as active without waiting for observer
+      setActiveSection(targetId);
+      activeSectionRef.current = targetId;
+      window.history.replaceState(null, "", href);
+
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Prevent observer from overriding while smooth scrolling
+        isClickScrollingRef.current = true;
+        if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+        clickTimeoutRef.current = setTimeout(() => {
+          isClickScrollingRef.current = false;
+        }, 850);
+
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    closeMenu();
+    setActiveSection("");
+    activeSectionRef.current = "";
+    isClickScrollingRef.current = true;
+    if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+    clickTimeoutRef.current = setTimeout(() => {
+      isClickScrollingRef.current = false;
+    }, 850);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+  };
 
   return (
     <header className="w-full bg-[#FFFFFF]/95 backdrop-blur-xl border-b border-[#DDE5E2] shadow-[0_2px_12px_rgba(8,63,66,0.04)] relative z-50">
@@ -67,16 +173,24 @@ export default function Header() {
 
         {/* Desktop Navigation (>= 1024px / lg) */}
         <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 flex-shrink-0">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              className="text-[#1E2929] hover:text-[#0F5C5E] transition-colors text-[11px] xl:text-[13px] px-1.5 xl:px-2.5 py-1.5 rounded-full hover:bg-[#EEF6F5] whitespace-nowrap font-medium cursor-pointer"
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const sectionId = link.href.substring(1);
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={link.href}
+                className={`transition-colors text-[11px] xl:text-[13px] px-2 xl:px-2.5 py-1.5 rounded-full whitespace-nowrap cursor-pointer ${
+                  isActive
+                    ? "active text-[#0F5C5E] bg-[#EEF6F5] font-semibold ring-1 ring-[#0F5C5E]/20 shadow-xs"
+                    : "text-[#1E2929] hover:text-[#0F5C5E] hover:bg-[#EEF6F5] font-medium"
+                }`}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Action Cluster */}
@@ -143,17 +257,31 @@ export default function Header() {
 
             {/* Navigation Links */}
             <nav className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  className="flex items-center justify-between p-3 rounded-xl text-[#1E2929] hover:text-[#0F5C5E] hover:bg-[#F0F5F4] transition-all text-sm font-medium min-h-[44px] cursor-pointer"
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                >
-                  <span>{link.label}</span>
-                  <span className="material-symbols-outlined text-[18px] text-[#0F5C5E]/60">chevron_right</span>
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const sectionId = link.href.substring(1);
+                const isActive = activeSection === sectionId;
+                return (
+                  <a
+                    key={link.href}
+                    className={`flex items-center justify-between p-3 rounded-xl transition-all text-sm min-h-[44px] cursor-pointer ${
+                      isActive
+                        ? "active text-[#0F5C5E] bg-[#EEF6F5] font-semibold border border-[#0F5C5E]/20"
+                        : "text-[#1E2929] hover:text-[#0F5C5E] hover:bg-[#F0F5F4] font-medium"
+                    }`}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
+                    <span>{link.label}</span>
+                    <span
+                      className={`material-symbols-outlined text-[18px] ${
+                        isActive ? "text-[#0F5C5E]" : "text-[#0F5C5E]/60"
+                      }`}
+                    >
+                      chevron_right
+                    </span>
+                  </a>
+                );
+              })}
             </nav>
 
             {/* Shift & Location Info Pill */}
