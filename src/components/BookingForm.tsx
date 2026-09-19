@@ -39,10 +39,10 @@ export default function BookingForm() {
 
   return (
     <section className="w-full py-space-xl px-margin-mobile md:px-margin max-w-4xl mx-auto" id="smart-booking">
-      <div className="rounded-3xl bg-surface-container-lowest border border-secondary/15 p-space-lg md:p-space-xl shadow-2xl flex flex-col gap-space-lg relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-60 h-60 bg-secondary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="flex flex-col gap-1 text-center max-w-xl mx-auto">
-          <span className="font-label-caps text-label-caps text-secondary font-bold tracking-wider uppercase">
+      <div className="rounded-3xl bg-surface-container-lowest border border-[#1E6FFF]/20 p-space-lg md:p-space-xl shadow-xl flex flex-col gap-space-lg relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E6FFF]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="flex flex-col gap-1 text-center max-w-xl mx-auto relative z-10">
+          <span className="font-label-caps text-label-caps text-[#1E6FFF] font-bold tracking-wider uppercase">
             CHAIRSIDE APPOINTMENT CONCIERGE
           </span>
           <h2 className="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
@@ -62,7 +62,7 @@ export default function BookingForm() {
                 Patient Full Name *
               </label>
               <input
-                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary font-body-md"
+                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/20 focus:outline-none focus:ring-2 focus:ring-[#1E6FFF] font-body-md"
                 id="book-name"
                 placeholder="e.g. Dr. Salman Khan"
                 required
@@ -77,7 +77,7 @@ export default function BookingForm() {
                 WhatsApp / Mobile Number *
               </label>
               <input
-                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary font-body-md"
+                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/20 focus:outline-none focus:ring-2 focus:ring-[#1E6FFF] font-body-md"
                 id="book-phone"
                 pattern="[0-9]{4}-[0-9]{7}|[0-9]{11}"
                 placeholder="0300-1234567"
@@ -96,7 +96,7 @@ export default function BookingForm() {
                 Primary Dental Concern *
               </label>
               <select
-                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary font-body-md"
+                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/20 focus:outline-none focus:ring-2 focus:ring-[#1E6FFF] font-body-md"
                 id="book-service"
                 required
                 value={formData.service}
@@ -117,7 +117,7 @@ export default function BookingForm() {
                 Preferred Shift &amp; Time *
               </label>
               <select
-                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary font-body-md"
+                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/20 focus:outline-none focus:ring-2 focus:ring-[#1E6FFF] font-body-md"
                 id="book-shift"
                 required
                 value={formData.shift}
@@ -137,7 +137,7 @@ export default function BookingForm() {
                 Preferred Appointment Date *
               </label>
               <input
-                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/10 focus:outline-none focus:ring-2 focus:ring-secondary font-body-md"
+                className="w-full px-4 py-3 rounded-xl bg-surface-container-low text-on-surface border border-secondary/20 focus:outline-none focus:ring-2 focus:ring-[#1E6FFF] font-body-md"
                 id="book-date"
                 required
                 type="date"
@@ -153,8 +153,8 @@ export default function BookingForm() {
                 <label
                   className={`flex items-center justify-center p-2.5 rounded-xl border cursor-pointer font-label-caps text-[11px] font-bold text-center transition-all ${
                     formData.urgency === "Routine"
-                      ? "bg-secondary-container text-on-secondary-container border-secondary"
-                      : "bg-surface-container-low text-on-surface border-secondary/10"
+                      ? "bg-[#1E6FFF]/10 text-[#0F4FCC] border-[#1E6FFF] ring-2 ring-[#1E6FFF]/20"
+                      : "bg-surface-container-low text-on-surface border-secondary/15"
                   }`}
                 >
                   <input
@@ -170,8 +170,8 @@ export default function BookingForm() {
                 <label
                   className={`flex items-center justify-center p-2.5 rounded-xl border cursor-pointer font-label-caps text-[11px] font-bold text-center transition-all ${
                     formData.urgency === "Mild Sensitivity"
-                      ? "bg-secondary-container text-on-secondary-container border-secondary"
-                      : "bg-surface-container-low text-on-surface border-secondary/10"
+                      ? "bg-[#8FCBF2]/25 text-[#002b66] border-[#1E6FFF]/50 ring-2 ring-[#8FCBF2]/30"
+                      : "bg-surface-container-low text-on-surface border-secondary/15"
                   }`}
                 >
                   <input
@@ -208,14 +208,14 @@ export default function BookingForm() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
-              className="flex-1 py-3.5 rounded-full bg-secondary-container text-on-secondary-container font-label-ui text-label-ui font-bold hover:bg-secondary-fixed transition-colors flex items-center justify-center gap-2 shadow-sm"
+              className="flex-1 py-3.5 rounded-full btn-neon font-label-ui text-label-ui font-bold flex items-center justify-center gap-2 shadow-md text-white"
               type="submit"
             >
               <span className="material-symbols-outlined text-[20px]">chat</span>
               <span>Book Instantly via WhatsApp (0303-5452839)</span>
             </button>
             <button
-              className="py-3.5 px-6 rounded-full bg-primary text-on-primary font-label-ui text-label-ui font-semibold hover:bg-primary-container transition-colors"
+              className="py-3.5 px-6 rounded-full bg-[#121417] text-white hover:bg-[#1B1F24] border border-[#1E6FFF]/30 font-label-ui text-label-ui font-semibold transition-colors"
               onClick={handleWebSubmit}
               type="button"
             >
@@ -225,7 +225,7 @@ export default function BookingForm() {
 
           {/* Privacy & Protection Assurance */}
           <div className="flex items-center justify-center gap-2 text-[12px] text-on-surface-variant pt-1 text-center">
-            <span className="material-symbols-outlined text-secondary text-[16px]">lock</span>
+            <span className="material-symbols-outlined text-[#1E6FFF] text-[16px]">lock</span>
             <span>Your personal details and medical history are strictly confidential under PMDC ethics.</span>
           </div>
         </form>

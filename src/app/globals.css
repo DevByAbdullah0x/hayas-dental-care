@@ -1,54 +1,45 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Material Design 3 Color Tokens ── */
-  --color-surface-container-highest: #e1e3e2;
-  --color-secondary-fixed-dim: #4fdbc8;
-  --color-on-background: #191c1c;
-  --color-on-secondary-fixed: #00201c;
-  --color-tertiary-fixed-dim: #ffb95f;
-  --color-on-secondary: #ffffff;
-  --color-surface-tint: #286865;
-  --color-primary: #003a39;
-  --color-surface-container-high: #e6e9e8;
+  /* ── Electric Blue Signage Color System ── */
+  --color-dark-bg: #121417;
+  --color-dark-card: #1B1F24;
+  --color-dark-border: rgba(30, 111, 255, 0.2);
+  --color-dark-muted: #A9B1BA;
+  
+  --color-neon-blue: #1E6FFF;
+  --color-neon-blue-dark: #0F4FCC;
+  --color-neon-blue-light: #2F7DFF;
+  --color-sky-blue: #8FCBF2;
+
+  /* Material token mappings to electric blue palette */
+  --color-primary: #1E6FFF;
+  --color-primary-container: #0F4FCC;
   --color-on-primary: #ffffff;
-  --color-inverse-surface: #2e3131;
-  --color-on-tertiary-container: #ffa71e;
-  --color-outline: #6f7978;
-  --color-secondary-container: #6df5e1;
-  --color-secondary-fixed: #71f8e4;
-  --color-on-tertiary-fixed: #2a1700;
-  --color-outline-variant: #bfc8c7;
-  --color-on-primary-fixed-variant: #04504e;
-  --color-on-secondary-container: #006f64;
-  --color-secondary: #006b5f;
-  --color-surface: #f8faf9;
-  --color-on-error: #ffffff;
-  --color-background: #f8faf9;
-  --color-on-error-container: #93000a;
+  --color-primary-fixed: #8FCBF2;
+  --color-on-primary-fixed: #001e4d;
+
+  --color-secondary: #1E6FFF;
+  --color-secondary-container: #8FCBF2;
+  --color-on-secondary-container: #002b66;
+  --color-secondary-fixed: #8FCBF2;
+  --color-secondary-fixed-dim: #5baaf0;
+
+  --color-surface: #ffffff;
   --color-surface-container-lowest: #ffffff;
-  --color-primary-container: #0b5351;
-  --color-on-surface: #191c1c;
-  --color-surface-dim: #d8dada;
-  --color-on-tertiary: #ffffff;
-  --color-surface-container-low: #f2f4f3;
-  --color-tertiary-fixed: #ffddb8;
-  --color-tertiary: #4b2d00;
-  --color-inverse-on-surface: #eff1f0;
-  --color-on-tertiary-fixed-variant: #653e00;
-  --color-on-secondary-fixed-variant: #005048;
-  --color-surface-bright: #f8faf9;
-  --color-primary-fixed-dim: #94d2ce;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container: #f1f5f9;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container-highest: #cbd5e1;
+
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #475569;
+  --color-outline: #94a3b8;
+  --color-outline-variant: #cbd5e1;
+
   --color-error: #ba1a1a;
-  --color-surface-container: #eceeed;
-  --color-tertiary-container: #6a4100;
   --color-error-container: #ffdad6;
-  --color-inverse-primary: #94d2ce;
-  --color-primary-fixed: #b0eeeb;
-  --color-on-primary-fixed: #00201f;
-  --color-on-surface-variant: #3f4948;
-  --color-on-primary-container: #88c5c2;
-  --color-surface-variant: #e1e3e2;
+  --color-on-error-container: #93000a;
 
   /* ── Border Radius ── */
   --radius: 1rem;
@@ -94,8 +85,39 @@
   }
 }
 
-/* ── Typography Utility Classes ── */
+/* ── Typography & Neon Glow Utility Classes ── */
 @layer utilities {
+  .text-neon-glow {
+    text-shadow: 0 0 8px rgba(30, 111, 255, 0.6), 0 0 16px rgba(30, 111, 255, 0.4);
+  }
+
+  .text-neon-glow-lg {
+    text-shadow: 0 0 10px rgba(30, 111, 255, 0.7), 0 0 25px rgba(30, 111, 255, 0.5), 0 0 40px rgba(30, 111, 255, 0.3);
+  }
+
+  .shadow-neon-glow {
+    box-shadow: 0 0 15px rgba(30, 111, 255, 0.4), 0 0 30px rgba(30, 111, 255, 0.2);
+  }
+
+  .shadow-neon-glow-hover {
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .shadow-neon-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(30, 111, 255, 0.6), 0 0 35px rgba(30, 111, 255, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .btn-neon {
+    background: linear-gradient(135deg, #2F7DFF 0%, #0F4FCC 100%);
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(30, 111, 255, 0.4);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-neon:hover {
+    box-shadow: 0 0 26px rgba(30, 111, 255, 0.7), 0 0 45px rgba(30, 111, 255, 0.35);
+    transform: translateY(-1px);
+  }
+
   .font-display-hero {
     font-family: "Playfair Display", Georgia, serif;
   }

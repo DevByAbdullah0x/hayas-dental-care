@@ -8,7 +8,7 @@ const reviews = [
     name: "Col. (R) Tariq Mahmood",
     location: "Gulshan-e-Abad, Rawalpindi",
     avatarClasses:
-      "w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-ui font-bold",
+      "w-10 h-10 rounded-full bg-[#1E6FFF] text-white flex items-center justify-center font-label-ui font-bold shadow-sm",
   },
   {
     quote:
@@ -17,7 +17,7 @@ const reviews = [
     name: "Dr. Fatima Zahra",
     location: "Bahria Town Phase 8",
     avatarClasses:
-      "w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-ui font-bold",
+      "w-10 h-10 rounded-full bg-[#8FCBF2] text-[#002b66] flex items-center justify-center font-label-ui font-bold shadow-sm",
   },
   {
     quote:
@@ -26,7 +26,7 @@ const reviews = [
     name: "Muhammad Usman",
     location: "Adiyala Road, Rawalpindi",
     avatarClasses:
-      "w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center font-label-ui font-bold",
+      "w-10 h-10 rounded-full bg-[#121417] text-[#8FCBF2] border border-[#1E6FFF]/30 flex items-center justify-center font-label-ui font-bold shadow-sm",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Reviews() {
             </h2>
           </div>
           <a
-            className="inline-flex items-center gap-1.5 font-label-ui text-label-ui font-semibold text-secondary hover:text-primary transition-colors"
+            className="inline-flex items-center gap-1.5 font-label-ui text-label-ui font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors"
             href="https://maps.google.com"
             rel="noopener"
             target="_blank"
@@ -89,7 +89,7 @@ export default function Reviews() {
           {reviews.map((review) => (
             <div
               key={review.initials}
-              className="p-space-lg rounded-2xl bg-surface-container-lowest border border-secondary/10 shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow"
+              className="p-space-lg rounded-2xl bg-surface-container-lowest border border-[#1E6FFF]/15 shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md hover:border-[#1E6FFF]/35 transition-all"
             >
               <div className="flex flex-col gap-space-sm">
                 <FiveStars />
