@@ -20,7 +20,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Haya's Dental Care · Aesthetic Dentistry & Implantology",
   description:
-    "Led by Dr. Aayisha Quddus (BDS, RDS, C-Ortho), Haya's Dental Care offers painless dental treatments, implants, braces, and cosmetic dentistry in Rawalpindi.",
+    "Led by Dr. Aayisha Quddus (BDS, MIHS, RDS, C-Ortho), Haya's Dental Care offers painless dental treatments, implants, braces, and cosmetic dentistry in Rawalpindi.",
   keywords: [
     "dentist rawalpindi",
     "dental implants rawalpindi",

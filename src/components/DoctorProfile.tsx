@@ -15,7 +15,7 @@ export default function DoctorProfile() {
             <div className="absolute bottom-4 left-4 right-4 text-on-primary flex items-center justify-between">
               <div>
                 <div className="font-headline-sm text-headline-sm font-bold">Dr. Aayisha Quddus</div>
-                <div className="font-label-ui text-label-ui opacity-90">B.D.S (Margalla), R.D.S (PMDC), C-Ortho</div>
+                <div className="font-label-ui text-label-ui opacity-90">BDS (MIHS), RDS (PMDC), C-Ortho</div>
               </div>
               <div className="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-sm font-bold flex items-center justify-center shadow-md">
                 AQ

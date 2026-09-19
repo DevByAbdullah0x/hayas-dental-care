@@ -60,7 +60,7 @@ export default function WhyUs() {
               </div>
               <div className="grid grid-cols-12 p-4 items-center border-b border-surface-container text-body-md bg-surface-container-low/30">
                 <div className="col-span-4 font-semibold text-primary">Treating Surgeon</div>
-                <div className="col-span-4 text-secondary font-medium">Always Dr. Aayisha Quddus (BDS, RDS, C-Ortho)</div>
+                <div className="col-span-4 text-secondary font-medium">Always Dr. Aayisha Quddus (BDS, MIHS, RDS, C-Ortho)</div>
                 <div className="col-span-4 text-on-surface-variant">Rotating junior trainee or dental assistant</div>
               </div>
               <div className="grid grid-cols-12 p-4 items-center text-body-md">

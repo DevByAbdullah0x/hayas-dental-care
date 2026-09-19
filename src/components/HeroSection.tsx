@@ -68,7 +68,7 @@ export default function HeroSection() {
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
             Led by{" "}
             <strong className="text-primary font-semibold">
-              Dr. Aayisha Quddus (BDS, RDS, C-Ortho)
+              Dr. Aayisha Quddus (BDS, MIHS, RDS, C-Ortho)
             </strong>
             , we blend painless anesthesia protocols, Swiss clinical standards,
             and hospital-grade sterilization into a warm, serene boutique
@@ -164,7 +164,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-space-md pb-space-sm border-b border-surface-container-high">
               <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-md flex-shrink-0 bg-primary">
                 <img
-                  alt="Dr. Aayisha Quddus BDS RDS C-Ortho"
+                  alt="Dr. Aayisha Quddus BDS MIHS RDS C-Ortho"
                   className="w-full h-full object-cover"
                   src="/dr-aayisha-quddus.jpg"
                 />
@@ -183,7 +183,7 @@ export default function HeroSection() {
                   </span>
                 </div>
                 <span className="font-label-ui text-label-ui text-on-surface-variant">
-                  BDS, RDS (Pak), C-Ortho
+                  BDS, MIHS, RDS (Pak), C-Ortho
                 </span>
                 <span className="font-label-caps text-label-caps text-secondary font-semibold mt-0.5 tracking-wider">
                   PMDC REG # 64912-D

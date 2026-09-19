@@ -97,7 +97,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-ui text-label-ui text-on-surface-variant border-t border-surface-container-high">
-          <p>© 2024 Haya&apos;s Dental Care. All rights reserved. Directed by Dr. Aayisha Quddus (BDS, RDS).</p>
+          <p>© 2024 Haya&apos;s Dental Care. All rights reserved. Directed by Dr. Aayisha Quddus (BDS, MIHS, RDS, C-Ortho).</p>
           <div className="flex items-center gap-space-lg">
             <a className="hover:text-primary transition-colors" href="#">
               Sterilization &amp; Privacy
