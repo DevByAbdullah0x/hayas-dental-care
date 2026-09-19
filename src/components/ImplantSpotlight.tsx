@@ -2,7 +2,7 @@ export default function ImplantSpotlight() {
   return (
     <section className="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-margin max-w-7xl mx-auto" id="implants">
       <div className="rounded-3xl bg-[#121417] border border-[#1E6FFF]/30 text-white p-5 sm:p-8 md:p-10 lg:p-space-xl relative overflow-hidden shadow-[0_0_40px_rgba(30,111,255,0.15)]">
-        <div className="absolute -bottom-24 -left-24 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#1E6FFF]/15 blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-[#1E6FFF]/15 blur-3xl pointer-events-none"></div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-space-xl items-center relative z-10">
           {/* Left Visual: Anatomical Diagram */}

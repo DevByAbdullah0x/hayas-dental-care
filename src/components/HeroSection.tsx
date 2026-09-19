@@ -8,9 +8,9 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#121417] text-white px-4 sm:px-6 md:px-margin pt-6 sm:pt-8 pb-12 sm:pb-16 md:pb-space-xl">
-      {/* Neon Electric Blue Ambient Glows */}
-      <div className="absolute -top-40 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#1E6FFF]/20 blur-[100px] sm:blur-[140px] pointer-events-none"></div>
-      <div className="absolute top-1/2 -right-24 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-[#1E6FFF]/15 blur-[100px] sm:blur-[140px] pointer-events-none"></div>
+      {/* Neon Electric Blue Ambient Glows safely positioned inside bounds */}
+      <div className="absolute top-0 left-0 w-72 sm:w-80 h-72 sm:h-80 rounded-full bg-[#1E6FFF]/15 blur-[90px] pointer-events-none"></div>
+      <div className="absolute top-1/2 right-0 w-64 sm:w-72 h-64 sm:h-72 rounded-full bg-[#1E6FFF]/15 blur-[90px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-space-xl items-center relative z-10">
         {/* Left Column: Trust & Hero Copy */}
@@ -140,7 +140,7 @@ export default function HeroSection() {
         {/* Right Column: Doctor Card & Live Shift Switcher */}
         <div className="lg:col-span-5 relative w-full">
           <div className="rounded-2xl p-4 sm:p-6 bg-[#1B1F24] backdrop-blur-xl shadow-[0_0_35px_rgba(30,111,255,0.15)] border border-[#1E6FFF]/30 flex flex-col gap-4 relative overflow-hidden">
-            <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-[#1E6FFF]/20 blur-2xl pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1E6FFF]/20 blur-2xl pointer-events-none"></div>
 
             {/* Doctor Card Header */}
             <div className="flex items-center gap-3 sm:gap-4 pb-3 sm:pb-4 border-b border-[#1E6FFF]/20">
@@ -219,17 +219,19 @@ export default function HeroSection() {
 
               {/* Shift Details Box */}
               <div className="p-3 sm:p-3.5 rounded-xl bg-[#121417] border border-[#1E6FFF]/25 flex flex-col gap-1.5">
-                <div className="flex items-center justify-between text-xs sm:text-sm font-medium text-white">
-                  <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-[#1E6FFF]">
+                <div className="flex flex-wrap items-center justify-between text-xs sm:text-sm font-medium text-white gap-1.5">
+                  <span className="flex items-center gap-1.5 min-w-0">
+                    <span className="material-symbols-outlined text-[16px] text-[#1E6FFF] flex-shrink-0">
                       schedule
                     </span>
-                    {activeShift === "morning"
-                      ? "11:00 AM – 2:00 PM (Morning)"
-                      : "3:00 PM – 9:30 PM (Evening Active)"}
+                    <span className="truncate">
+                      {activeShift === "morning"
+                        ? "11:00 AM – 2:00 PM (Morning)"
+                        : "3:00 PM – 9:30 PM (Evening Active)"}
+                    </span>
                   </span>
                   <span
-                    className={`px-2 py-0.5 rounded-full text-[10px] font-label-caps font-bold ${
+                    className={`px-2 py-0.5 rounded-full text-[10px] font-label-caps font-bold whitespace-nowrap flex-shrink-0 ${
                       activeShift === "morning"
                         ? "bg-[#1B1F24] text-[#A9B1BA] border border-[#1E6FFF]/20"
                         : "bg-[#1E6FFF]/20 text-[#8FCBF2] border border-[#1E6FFF]/40 shadow-[0_0_8px_rgba(30,111,255,0.3)]"
@@ -242,32 +244,32 @@ export default function HeroSection() {
                   <span>Awami Plaza, Basement D</span>
                   <span className="text-[#8FCBF2] font-semibold">
                     {activeShift === "morning"
-                      ? "Estimated wait: ~5 mins"
-                      : "Current wait: ~8 mins"}
+                      ? "Wait: ~5m"
+                      : "Wait: ~8m"}
                   </span>
                 </div>
               </div>
             </div>
 
             {/* Facility Amenities */}
-            <div className="grid grid-cols-3 gap-2 py-1 text-center font-label-caps text-[10px] sm:text-[11px] text-[#A9B1BA]">
-              <div className="p-2 rounded-xl bg-[#121417] border border-[#1E6FFF]/15 flex flex-col items-center gap-1">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 py-1 text-center font-label-caps text-[9px] sm:text-[10px] md:text-[11px] text-[#A9B1BA]">
+              <div className="p-2 rounded-xl bg-[#121417] border border-[#1E6FFF]/15 flex flex-col items-center gap-1 min-w-0">
                 <span className="material-symbols-outlined text-[#1E6FFF] text-[18px]">
                   local_parking
                 </span>
-                <span>Plaza Parking</span>
+                <span className="truncate w-full">Plaza Parking</span>
               </div>
-              <div className="p-2 rounded-xl bg-[#121417] border border-[#1E6FFF]/15 flex flex-col items-center gap-1">
+              <div className="p-2 rounded-xl bg-[#121417] border border-[#1E6FFF]/15 flex flex-col items-center gap-1 min-w-0">
                 <span className="material-symbols-outlined text-[#1E6FFF] text-[18px]">
                   accessible
                 </span>
-                <span>Ramp &amp; Lift</span>
+                <span className="truncate w-full">Ramp &amp; Lift</span>
               </div>
-              <div className="p-2 rounded-xl bg-[#121417] border border-[#1E6FFF]/15 flex flex-col items-center gap-1">
+              <div className="p-2 rounded-xl bg-[#121417] border border-[#1E6FFF]/15 flex flex-col items-center gap-1 min-w-0">
                 <span className="material-symbols-outlined text-[#1E6FFF] text-[18px]">
                   lock_reset
                 </span>
-                <span>Sterile Operatory</span>
+                <span className="truncate w-full">Sterile Operatory</span>
               </div>
             </div>
 
