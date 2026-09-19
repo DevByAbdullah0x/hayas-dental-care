@@ -111,28 +111,28 @@ export default function ServicesGrid() {
   return (
     <section
       id="services-grid"
-      className="w-full py-space-xl px-margin-mobile md:px-margin bg-slate-50"
+      className="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-margin bg-slate-50"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-space-xl">
+      <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-space-xl">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="font-label-caps text-label-caps text-[#1E6FFF] font-bold tracking-wider uppercase">
+            <span className="font-label-caps text-[10px] sm:text-[11px] text-[#1E6FFF] font-bold tracking-wider uppercase">
               Clinical Offerings
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-[#1E6FFF] font-semibold tracking-tight">
+            <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#1E6FFF] font-semibold tracking-tight mt-1">
               Specialized Dental Procedures
             </h2>
-            <p className="font-body-lg text-slate-600 mt-1">
+            <p className="font-body-lg text-sm sm:text-base text-slate-600 mt-1 max-w-2xl">
               Evidence-based treatments delivered with modern equipment and
-              compassionate care.
+              compassionate chairside care.
             </p>
           </div>
           <Link
             href="#calculator-section"
-            className="inline-flex items-center gap-1 font-label-ui text-label-ui font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-sm font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors py-2 min-h-[44px]"
           >
-            Calculate custom treatment estimate
+            <span>Calculate custom treatment estimate</span>
             <span
               className="material-symbols-outlined text-[18px]"
               style={{ fontVariationSettings: "'FILL' 1" }}
@@ -142,75 +142,77 @@ export default function ServicesGrid() {
           </Link>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+        {/* Responsive Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service) => (
             <div
               key={service.id}
-              className="p-space-lg rounded-2xl bg-white border border-slate-200 hover:border-[#1E6FFF]/50 flex flex-col justify-between gap-space-md hover:shadow-lg transition-all"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#1E6FFF]/50 flex flex-col justify-between gap-5 hover:shadow-lg transition-all"
             >
               {/* Top section */}
-              <div className="flex flex-col gap-space-md">
+              <div className="flex flex-col gap-3 sm:gap-4">
                 {/* Icon & Duration Row */}
                 <div className="flex items-center justify-between">
                   <span
-                    className="material-symbols-outlined text-[28px] p-2.5 rounded-xl bg-[#1E6FFF]/10 text-[#1E6FFF]"
+                    className="material-symbols-outlined text-[26px] p-2.5 rounded-xl bg-[#1E6FFF]/10 text-[#1E6FFF]"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     {service.icon}
                   </span>
-                  <span className="px-2.5 py-1 rounded-full font-label-caps text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200/60">
+                  <span className="px-2.5 py-1 rounded-full font-label-caps text-[10px] sm:text-[11px] font-semibold bg-slate-100 text-slate-600 border border-slate-200/60">
                     {service.duration}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-title-md text-title-md font-bold text-[#0f172a]">
+                <h3 className="font-title-md text-base sm:text-lg font-bold text-[#0f172a]">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="font-body-md text-body-md text-slate-600 leading-relaxed">
+                <p className="font-body-md text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {service.desc}
                 </p>
 
-                {/* Detail Toggle Button */}
+                {/* Detail Toggle Button (min 44px touch target) */}
                 <button
                   onClick={() => toggleDetail(service.id)}
-                  className="self-start inline-flex items-center gap-1 font-label-ui text-[13px] font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors"
+                  className="self-start inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-[13px] font-semibold text-[#1E6FFF] hover:text-[#0F4FCC] transition-colors min-h-[44px] py-1"
+                  type="button"
+                  aria-expanded={!!openDetails[service.id]}
                 >
                   <span
-                    className="material-symbols-outlined text-[16px]"
+                    className="material-symbols-outlined text-[18px]"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     {openDetails[service.id] ? "expand_less" : "expand_more"}
                   </span>
-                  Inspect Steps
+                  <span>{openDetails[service.id] ? "Hide Steps" : "Inspect Clinical Steps"}</span>
                 </button>
 
                 {/* Expandable Steps */}
                 {openDetails[service.id] && (
-                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-[12px] font-body-md text-slate-700 flex flex-col gap-1.5">
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-body-md text-slate-700 flex flex-col gap-2 animate-fadeIn">
                     {service.steps.map((step) => (
-                      <span key={step}>{step}</span>
+                      <span key={step} className="leading-snug">{step}</span>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Price Section */}
-              <div className="pt-space-sm border-t border-slate-100 flex items-center justify-between">
+              {/* Price & Action Section (min 44px tap target) */}
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
                 <div>
-                  <span className="font-label-caps text-[10px] text-slate-400 tracking-wider block">
+                  <span className="font-label-caps text-[9px] sm:text-[10px] text-slate-400 tracking-wider block">
                     {service.priceLabel}
                   </span>
-                  <p className="font-title-md text-title-md font-bold text-[#0f172a]">
+                  <p className="font-title-md text-sm sm:text-base font-bold text-[#0f172a]">
                     {service.price}
                   </p>
                 </div>
                 <Link
                   href="#smart-booking"
-                  className="px-3 py-1.5 rounded-lg bg-[#1E6FFF]/10 text-[#1E6FFF] hover:bg-[#1E6FFF] hover:text-white transition-all font-label-ui text-[12px] font-semibold"
+                  className="px-3.5 py-2.5 rounded-xl bg-[#1E6FFF]/10 text-[#1E6FFF] hover:bg-[#1E6FFF] hover:text-white transition-all font-label-ui text-xs font-semibold min-h-[44px] flex items-center justify-center"
                 >
                   Book Slot
                 </Link>

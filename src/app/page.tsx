@@ -22,8 +22,8 @@ export default function Home() {
         <Header />
       </div>
 
-      {/* Main Content */}
-      <main className="w-full pt-28 pb-20 md:pb-0 bg-surface min-h-screen">
+      {/* Main Content with Mobile Bottom Bar spacing */}
+      <main className="w-full pt-20 sm:pt-24 md:pt-28 pb-20 md:pb-0 bg-surface min-h-screen">
         <div className="flex flex-col w-full">
           {/* 1. Luxury Hero Experience */}
           <HeroSection />
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Mobile Bottom Bar */}
+      {/* Mobile Bottom Quick Action Bar */}
       <MobileBottomBar />
 
       {/* Footer */}
