@@ -51,9 +51,9 @@ export default function DoctorProfile() {
             </div>
             <div className="p-3.5 rounded-xl bg-surface-container flex flex-col gap-1">
               <span className="font-label-caps text-label-caps text-secondary font-bold">REGISTRATION</span>
-              <span className="font-title-md text-[15px] font-semibold text-primary">R.D.S # 64912-D</span>
+              <span className="font-title-md text-[15px] font-semibold text-primary">PMDC # 10807-D</span>
               <span className="font-label-caps text-[11px] text-on-surface-variant">
-                Pakistan Medical &amp; Dental Council
+                PMDC Reg · Clinic Reg # 60691
               </span>
             </div>
             <div className="p-3.5 rounded-xl bg-surface-container flex flex-col gap-1">

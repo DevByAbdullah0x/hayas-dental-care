@@ -186,7 +186,7 @@ export default function HeroSection() {
                   BDS, MIHS, RDS (Pak), C-Ortho
                 </span>
                 <span className="font-label-caps text-label-caps text-secondary font-semibold mt-0.5 tracking-wider">
-                  PMDC REG # 64912-D
+                  PMDC NO. 10807-D · REG # 60691
                 </span>
               </div>
             </div>

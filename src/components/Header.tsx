@@ -6,9 +6,9 @@ export default function Header() {
       <div className="h-20 w-full px-margin-mobile md:px-margin flex items-center justify-between gap-space-md">
         <div className="flex items-center gap-space-md flex-shrink-0">
           <img
-            alt="Haya's Dental Care Geometric Tooth Monogram"
-            className="h-8 w-auto object-contain"
-            src="https://lh3.googleusercontent.com/aida/AEtjO1X2WDP0h04alXNRishn50onF6nhqCQ745bCvf29s5biThWN8AL9IGCNwmbB1K5QOCLnB8h772MfasKAKy6U-mEAAX_nXymahBDFGmbiyrPjPSXV7USWqhhj303ghiyyW3pfE0LGk0LHxXg7V5yptEMidhLJyRqNt3Q7MlXhUvqY0ycTKU0b3533JMGmEpy0uUgHOZmqBvmHS_Qvk2TXZxwTU-2R2mnN324I_2HhNrhn4iSA7whz_s5Mfg"
+            alt="Haya's Dental Care Logo"
+            className="h-10 w-auto object-contain"
+            src="/logo.png"
           />
           <div className="flex flex-col">
             <a

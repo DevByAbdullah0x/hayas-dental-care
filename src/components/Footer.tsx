@@ -9,9 +9,9 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col gap-space-md">
             <div className="flex items-center gap-space-sm">
               <img
-                alt="Haya's Dental Care Geometric Tooth Monogram"
-                className="h-8 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1X2WDP0h04alXNRishn50onF6nhqCQ745bCvf29s5biThWN8AL9IGCNwmbB1K5QOCLnB8h772MfasKAKy6U-mEAAX_nXymahBDFGmbiyrPjPSXV7USWqhhj303ghiyyW3pfE0LGk0LHxXg7V5yptEMidhLJyRqNt3Q7MlXhUvqY0ycTKU0b3533JMGmEpy0uUgHOZmqBvmHS_Qvk2TXZxwTU-2R2mnN324I_2HhNrhn4iSA7whz_s5Mfg"
+                alt="Haya's Dental Care Logo"
+                className="h-10 w-auto object-contain"
+                src="/logo.png"
               />
               <span className="font-headline-sm text-headline-sm text-primary font-bold">Haya&apos;s Dental Care</span>
             </div>
@@ -24,7 +24,7 @@ export default function Footer() {
                 <div className="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">
                   PMDC Verified Surgeon
                 </div>
-                <div className="font-label-ui text-label-ui font-semibold text-primary">Registration # 64912-D</div>
+                <div className="font-label-ui text-label-ui font-semibold text-primary">PMDC # 10807-D · Reg # 60691</div>
               </div>
             </div>
           </div>
