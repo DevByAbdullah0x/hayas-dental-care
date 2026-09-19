@@ -44,7 +44,7 @@ function FiveStars({ size = 18 }: { size?: number }) {
 export default function Reviews() {
   return (
     <section
-      className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#FFFFFF] border-b border-[#DDE5E2]"
+      className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#FFFFFF] border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32"
       id="reviews-section"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">

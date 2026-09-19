@@ -119,11 +119,11 @@ export default function Footer() {
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label-ui text-xs text-[#DDE5E2]/70 border-t border-[#0F5C5E]/40 text-center sm:text-left">
           <p>© 2024 Haya&apos;s Dental Care. Directed by Dr. Aayisha Quddus (BDS, MIHS, RDS, C-Ortho).</p>
           <div className="flex items-center gap-4 flex-wrap justify-center">
-            <a className="hover:text-[#C9A96E] transition-colors py-1" href="#">
-              Sterilization &amp; Privacy
+            <a className="hover:text-[#C9A96E] transition-colors py-1" href="#why-us">
+              Sterilization &amp; Protocols
             </a>
-            <a className="hover:text-[#C9A96E] transition-colors py-1" href="#">
-              Patient Guide
+            <a className="hover:text-[#C9A96E] transition-colors py-1" href="#about">
+              Clinical Leadership
             </a>
             <a className="hover:text-[#C9A96E] transition-colors py-1" href="#location-hours">
               Find Clinic

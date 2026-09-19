@@ -1,7 +1,7 @@
 export default function WhyUs() {
   return (
     <section
-      className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2]"
+      className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32"
       id="why-us"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-14 sm:gap-18">

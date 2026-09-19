@@ -63,7 +63,7 @@ export default function SmileGallery() {
   return (
     <section
       id="smile-gallery"
-      className="w-full py-18 sm:py-24 md:py-28 bg-[#FFFFFF] px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2]"
+      className="w-full py-18 sm:py-24 md:py-28 bg-[#FFFFFF] px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-10 sm:gap-12">
         {/* Section Header */}

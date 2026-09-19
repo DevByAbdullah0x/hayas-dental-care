@@ -40,7 +40,7 @@ export default function BookingForm() {
 
   return (
     <section
-      className="w-full py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#083F42] text-white relative overflow-hidden"
+      className="w-full py-20 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#083F42] text-white relative overflow-hidden scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32"
       id="smart-booking"
     >
       {/* Subtle Background Glows */}

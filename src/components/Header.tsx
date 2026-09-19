@@ -10,6 +10,26 @@ export default function Header() {
   const toggleMenu = () => setMobileMenuOpen((prev) => !prev);
   const closeMenu = () => setMobileMenuOpen(false);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      closeMenu();
+      const targetId = href.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", href);
+      }
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.pushState(null, "", "/");
+  };
+
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#services-grid", label: "Services" },
@@ -26,9 +46,9 @@ export default function Header() {
       <div className="h-16 sm:h-20 w-full px-4 sm:px-6 xl:px-8 max-w-7xl mx-auto flex items-center justify-between gap-2 xl:gap-4">
         {/* Brand Identity */}
         <Link
-          href="#"
+          href="/"
           className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0 group min-w-0"
-          onClick={closeMenu}
+          onClick={handleLogoClick}
         >
           <img
             alt="Haya's Dental Care Logo"
@@ -50,8 +70,9 @@ export default function Header() {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              className="text-[#1E2929] hover:text-[#0F5C5E] transition-colors text-[11px] xl:text-[13px] px-1.5 xl:px-2.5 py-1.5 rounded-full hover:bg-[#EEF6F5] whitespace-nowrap font-medium"
+              className="text-[#1E2929] hover:text-[#0F5C5E] transition-colors text-[11px] xl:text-[13px] px-1.5 xl:px-2.5 py-1.5 rounded-full hover:bg-[#EEF6F5] whitespace-nowrap font-medium cursor-pointer"
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
             </a>
@@ -72,9 +93,9 @@ export default function Header() {
 
           {/* Book Appointment CTA */}
           <a
-            className="hidden lg:inline-flex btn-primary items-center justify-center px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full text-xs font-semibold text-white min-h-[38px] xl:min-h-[40px] whitespace-nowrap flex-shrink-0 shadow-soft"
+            className="hidden lg:inline-flex btn-primary items-center justify-center px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full text-xs font-semibold text-white min-h-[38px] xl:min-h-[40px] whitespace-nowrap flex-shrink-0 shadow-soft cursor-pointer"
             href="#smart-booking"
-            onClick={closeMenu}
+            onClick={(e) => handleNavClick(e, "#smart-booking")}
           >
             Book Appointment
           </a>
@@ -125,9 +146,9 @@ export default function Header() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  className="flex items-center justify-between p-3 rounded-xl text-[#1E2929] hover:text-[#0F5C5E] hover:bg-[#F0F5F4] transition-all text-sm font-medium min-h-[44px]"
+                  className="flex items-center justify-between p-3 rounded-xl text-[#1E2929] hover:text-[#0F5C5E] hover:bg-[#F0F5F4] transition-all text-sm font-medium min-h-[44px] cursor-pointer"
                   href={link.href}
-                  onClick={closeMenu}
+                  onClick={(e) => handleNavClick(e, link.href)}
                 >
                   <span>{link.label}</span>
                   <span className="material-symbols-outlined text-[18px] text-[#0F5C5E]/60">chevron_right</span>
@@ -146,9 +167,9 @@ export default function Header() {
 
             {/* Primary Action Button */}
             <a
-              className="btn-primary w-full py-3.5 rounded-xl text-center text-sm font-bold text-white min-h-[48px] flex items-center justify-center gap-2"
+              className="btn-primary w-full py-3.5 rounded-xl text-center text-sm font-bold text-white min-h-[48px] flex items-center justify-center gap-2 cursor-pointer"
               href="#smart-booking"
-              onClick={closeMenu}
+              onClick={(e) => handleNavClick(e, "#smart-booking")}
             >
               <span className="material-symbols-outlined text-[18px]">calendar_month</span>
               <span>Reserve Consultation Online</span>

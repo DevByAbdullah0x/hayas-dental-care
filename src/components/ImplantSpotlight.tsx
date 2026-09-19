@@ -2,7 +2,7 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function ImplantSpotlight() {
   return (
-    <section className="w-full bg-[#FFFFFF] py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2]" id="implants">
+    <section className="w-full bg-[#FFFFFF] py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32" id="implants">
       <div className="max-w-7xl mx-auto">
         <div className="rounded-3xl bg-[#083F42] text-white p-8 sm:p-10 md:p-12 lg:p-16 relative overflow-hidden shadow-soft-lg border border-[#0F5C5E]/40">
           {/* Subtle Ambient Glow */}

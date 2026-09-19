@@ -111,7 +111,7 @@ export default function ServicesGrid() {
   return (
     <section
       id="services-grid"
-      className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-margin bg-[#EEF6F5] border-b border-[#DDE5E2]"
+      className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-margin bg-[#EEF6F5] border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Section Header */}

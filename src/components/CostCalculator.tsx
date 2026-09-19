@@ -71,7 +71,7 @@ export default function CostCalculator() {
   };
 
   return (
-    <section id="calculator-section" className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2]">
+    <section id="calculator-section" className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         {/* Section Header */}
         <div className="flex flex-col gap-2 max-w-2xl">

@@ -1,6 +1,6 @@
 export default function DoctorProfile() {
   return (
-    <section className="w-full bg-[#FFFFFF] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2]" id="about">
+    <section className="w-full bg-[#FFFFFF] py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2] scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32" id="about">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           {/* Left / Main: Editorial Quote & Doctor Signature Panel */}
