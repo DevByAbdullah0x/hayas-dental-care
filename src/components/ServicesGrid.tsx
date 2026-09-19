@@ -20,13 +20,13 @@ const services: ServiceData[] = [
     icon: "dentistry",
     title: "Braces & Orthodontics",
     duration: "12 – 18 Months",
-    desc: "Comprehensive alignment for teens and adults using ceramic aesthetic brackets, high-tensile metal, and custom clear aligners.",
+    desc: "Comprehensive smile alignment for teens and adults using aesthetic ceramic brackets, precision metal, and custom clear aligners.",
     priceLabel: "STARTING FROM",
     price: "PKR 70,000",
     steps: [
       "1. Digital cephalometric & photographic analysis",
       "2. Gentle bracket bonding session (60 mins)",
-      "3. Monthly adjustment & torque reviews",
+      "3. Monthly adjustment & alignment reviews",
     ],
   },
   {
@@ -34,27 +34,27 @@ const services: ServiceData[] = [
     icon: "medical_services",
     title: "Permanent Dental Implants",
     duration: "2 Key Visits",
-    desc: "Swiss and German titanium fixtures surgically integrated into the jawbone, topped with bespoke monolithic zirconia crowns.",
+    desc: "European grade-4 titanium fixtures surgically integrated into the jawbone, topped with bespoke monolithic zirconia crowns.",
     priceLabel: "STARTING FROM",
     price: "PKR 120,000",
     steps: [
-      "1. 3D CBCT Bone density evaluation",
+      "1. 3D CBCT bone density evaluation",
       "2. Flapless titanium fixture placement",
-      "3. Osseointegration check & Zirconia crown seating",
+      "3. Osseointegration check & custom crown seating",
     ],
   },
   {
     id: "whitening",
     icon: "auto_awesome",
-    title: "Cold-Laser Whitening",
+    title: "Cold-Laser Teeth Whitening",
     duration: "45 Minutes",
-    desc: "Safe chairside enamel lightening. Removes tea, tobacco, and aged discoloration by up to 6 shades without thinning tooth enamel.",
+    desc: "Safe chairside enamel lightening. Lifts tea, tobacco, and coffee discoloration by up to 6 shades without enamel degradation.",
     priceLabel: "PACKAGE RANGE",
     price: "PKR 15K – 25K",
     steps: [
-      "1. Gingival dam application (gum barrier defense)",
-      "2. Medical peroxide gel + LED activation",
-      "3. Remineralizing desensitizing gloss",
+      "1. Gingival dam application (protective gum barrier)",
+      "2. Medical whitening gel + cold-LED activation",
+      "3. Remineralizing desensitizing protective finish",
     ],
   },
   {
@@ -62,11 +62,11 @@ const services: ServiceData[] = [
     icon: "health_and_safety",
     title: "Painless Root Canal (RCT)",
     duration: "Single / Dual Visit",
-    desc: "Save severely infected or painful teeth. High-speed motorized rotary shaping under rubber dam isolation with warm obturation.",
+    desc: "Save infected or deeply aching teeth with high-speed motorized rotary shaping under rubber dam isolation and warm hermetic sealing.",
     priceLabel: "PER CANAL RANGE",
     price: "PKR 8K – 15K",
     steps: [
-      "1. Numbness confirmation test",
+      "1. Localized numbness confirmation test",
       "2. Digital apex locator length verification",
       "3. Biocompatible gutta-percha hermetic sealing",
     ],
@@ -76,12 +76,12 @@ const services: ServiceData[] = [
     icon: "sentiment_satisfied",
     title: "Flexible Dentures & Arches",
     duration: "3 – 4 Sittings",
-    desc: "Lightweight Valplast flexible dentures and precision cast cobalt-chromium partial dentures for elder mastication comfort.",
+    desc: "Lightweight Valplast flexible dentures and precision cobalt-chromium partial dentures engineered for elder mastication comfort.",
     priceLabel: "PER JAW ARCH",
     price: "PKR 25K – 60K",
     steps: [
-      "1. High-accuracy primary & secondary impressions",
-      "2. Jaw relation recording & wax try-in",
+      "1. High-precision anatomical impressions",
+      "2. Jaw relation recording & wax bite try-in",
       "3. Final seating with occlusion bite balance",
     ],
   },
@@ -95,130 +95,141 @@ const services: ServiceData[] = [
     price: "PKR 3K – 6K",
     steps: [
       "1. Supragingival & subgingival ultrasonic wash",
-      "2. Gentle polishing paste to seal microscopic pits",
+      "2. Gentle polishing paste sealing microscopic pits",
       "3. Chairside oral hygiene prescription",
     ],
   },
 ];
 
 export default function ServicesGrid() {
-  const [openDetails, setOpenDetails] = useState<Record<string, boolean>>({});
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  const toggleDetail = (id: string) => {
-    setOpenDetails((prev) => ({ ...prev, [id]: !prev[id] }));
+  const toggleExpand = (id: string) => {
+    setExpandedId((prev) => (prev === id ? null : id));
   };
 
   return (
     <section
       id="services-grid"
-      className="w-full py-14 sm:py-18 md:py-20 px-4 sm:px-6 md:px-margin bg-[#F0F5F4] border-b border-[#DDE5E2]"
+      className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-margin bg-[#EEF6F5] border-b border-[#DDE5E2]"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-space-xl">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <span className="font-label-caps text-[10px] sm:text-[11px] text-[#0F5C5E] font-bold tracking-wider uppercase">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
+          <div className="flex flex-col gap-1.5 max-w-2xl">
+            <span className="font-label-caps text-[11px] text-[#0F5C5E] font-bold tracking-[0.2em] uppercase">
               Clinical Offerings
             </span>
-            <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#083F42] font-semibold tracking-tight mt-1">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#083F42] font-semibold tracking-tight">
               Specialized Dental Procedures
             </h2>
-            <p className="font-body-lg text-sm sm:text-base text-[#647070] mt-1 max-w-2xl">
-              Evidence-based treatments delivered with modern equipment and
-              compassionate chairside care.
+            <p className="text-sm sm:text-base text-[#647070] leading-relaxed">
+              Carefully curated treatments delivered with Swiss-level precision,
+              modern equipment, and compassionate chairside care.
             </p>
           </div>
+
           <Link
             href="#calculator-section"
-            className="inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-sm font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors py-2 min-h-[44px]"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors py-2 group"
           >
-            <span>Calculate custom treatment estimate</span>
-            <span
-              className="material-symbols-outlined text-[18px]"
-              style={{ fontVariationSettings: "'FILL' 1" }}
-            >
+            <span>Calculate custom estimate</span>
+            <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
               arrow_forward
             </span>
           </Link>
         </div>
 
-        {/* Responsive Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDE5E2] hover:border-[#0F5C5E]/50 flex flex-col justify-between gap-5 shadow-soft hover:shadow-soft-lg transition-all"
-            >
-              {/* Top section */}
-              <div className="flex flex-col gap-3 sm:gap-4">
-                {/* Icon & Duration Row */}
-                <div className="flex items-center justify-between">
-                  <span
-                    className="material-symbols-outlined text-[24px] p-2.5 rounded-xl bg-[#F0F5F4] text-[#0F5C5E]"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    {service.icon}
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full font-label-caps text-[10px] sm:text-[11px] font-semibold bg-[#F8F6F1] text-[#647070] border border-[#DDE5E2]">
-                    {service.duration}
-                  </span>
-                </div>
+        {/* Editorial Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const isExpanded = expandedId === service.id;
 
-                {/* Title */}
-                <h3 className="font-title-md text-base sm:text-lg font-bold text-[#083F42]">
-                  {service.title}
-                </h3>
+            return (
+              <div
+                key={service.id}
+                className="p-6 sm:p-7 rounded-3xl bg-[#FFFFFF] border border-[#DDE5E2] hover:border-[#0F5C5E]/40 flex flex-col justify-between shadow-soft hover:shadow-soft-lg transition-all duration-300"
+              >
+                <div className="flex flex-col gap-4">
+                  {/* Icon & Duration Pill */}
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-2xl bg-[#EEF6F5] text-[#0F5C5E] flex items-center justify-center border border-[#0F5C5E]/15">
+                      <span className="material-symbols-outlined text-[22px]">
+                        {service.icon}
+                      </span>
+                    </div>
 
-                {/* Description */}
-                <p className="font-body-md text-xs sm:text-sm text-[#647070] leading-relaxed">
-                  {service.desc}
-                </p>
-
-                {/* Detail Toggle Button (min 44px touch target) */}
-                <button
-                  onClick={() => toggleDetail(service.id)}
-                  className="self-start inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-[13px] font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors min-h-[44px] py-1"
-                  type="button"
-                  aria-expanded={!!openDetails[service.id]}
-                >
-                  <span
-                    className="material-symbols-outlined text-[18px]"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    {openDetails[service.id] ? "expand_less" : "expand_more"}
-                  </span>
-                  <span>{openDetails[service.id] ? "Hide Steps" : "Inspect Clinical Steps"}</span>
-                </button>
-
-                {/* Expandable Steps */}
-                {openDetails[service.id] && (
-                  <div className="p-3.5 rounded-xl bg-[#F8F6F1] border border-[#DDE5E2] text-xs font-body-md text-[#1E2929] flex flex-col gap-2 animate-fadeIn">
-                    {service.steps.map((step) => (
-                      <span key={step} className="leading-snug">{step}</span>
-                    ))}
+                    <span className="px-3 py-1 rounded-full font-label-caps text-[10px] sm:text-[11px] font-semibold bg-[#F8F6F1] text-[#647070] border border-[#DDE5E2]">
+                      {service.duration}
+                    </span>
                   </div>
-                )}
-              </div>
 
-              {/* Price & Action Section (min 44px tap target) */}
-              <div className="pt-3 border-t border-[#DDE5E2] flex items-center justify-between gap-3">
-                <div>
-                  <span className="font-label-caps text-[9px] sm:text-[10px] text-[#647070] tracking-wider block">
-                    {service.priceLabel}
-                  </span>
-                  <p className="font-title-md text-sm sm:text-base font-bold text-[#083F42]">
-                    {service.price}
+                  {/* Treatment Title */}
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-[#083F42] tracking-tight">
+                    {service.title}
+                  </h3>
+
+                  {/* Short Description */}
+                  <p className="text-xs sm:text-sm text-[#647070] leading-relaxed">
+                    {service.desc}
                   </p>
+
+                  {/* Progressive Disclosure Toggle */}
+                  <button
+                    onClick={() => toggleExpand(service.id)}
+                    className="self-start inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors py-1 group"
+                    type="button"
+                    aria-expanded={isExpanded}
+                  >
+                    <span>{isExpanded ? "Collapse protocol" : "Explore treatment"}</span>
+                    <span className="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">
+                      {isExpanded ? "expand_less" : "arrow_forward"}
+                    </span>
+                  </button>
+
+                  {/* Expanded Treatment Steps */}
+                  {isExpanded && (
+                    <div className="p-4 rounded-2xl bg-[#F8F6F1] border border-[#DDE5E2] text-xs text-[#1E2929] flex flex-col gap-2 animate-fadeIn">
+                      <div className="font-label-caps text-[10px] font-bold text-[#0F5C5E] tracking-wider uppercase">
+                        Clinical Protocol
+                      </div>
+                      {service.steps.map((step) => (
+                        <div key={step} className="flex items-start gap-2 leading-relaxed text-[#647070]">
+                          <span className="text-[#0F5C5E] font-bold">•</span>
+                          <span>{step}</span>
+                        </div>
+                      ))}
+                      <Link
+                        href="#smart-booking"
+                        className="mt-2 text-center py-2.5 px-3 rounded-xl btn-primary text-xs font-semibold text-white"
+                      >
+                        Reserve Slot for {service.title}
+                      </Link>
+                    </div>
+                  )}
                 </div>
-                <Link
-                  href="#smart-booking"
-                  className="px-4 py-2 rounded-xl bg-[#F0F5F4] text-[#0F5C5E] border border-[#0F5C5E]/20 hover:bg-[#0F5C5E] hover:text-white transition-all font-label-ui text-xs font-semibold min-h-[40px] flex items-center justify-center"
-                >
-                  Book Slot
-                </Link>
+
+                {/* Pricing Footer */}
+                <div className="pt-4 mt-6 border-t border-[#DDE5E2] flex items-center justify-between gap-3">
+                  <div>
+                    <span className="font-label-caps text-[9px] sm:text-[10px] text-[#647070] tracking-wider block">
+                      {service.priceLabel}
+                    </span>
+                    <p className="text-sm sm:text-base font-bold text-[#083F42]">
+                      {service.price}
+                    </p>
+                  </div>
+
+                  <Link
+                    href="#smart-booking"
+                    className="px-4 py-2 rounded-xl bg-[#EEF6F5] text-[#0F5C5E] border border-[#0F5C5E]/20 hover:bg-[#0F5C5E] hover:text-white transition-all text-xs font-semibold min-h-[38px] flex items-center justify-center"
+                  >
+                    Book Slot
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

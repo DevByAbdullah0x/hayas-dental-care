@@ -3,9 +3,9 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#083F42] text-white pt-12 sm:pt-16 pb-12 border-t border-[#0F5C5E]/40">
+    <footer className="w-full bg-[#083F42] text-white pt-16 sm:pt-20 pb-12 border-t border-[#0F5C5E]/40">
       <div className="w-full px-4 sm:px-6 md:px-margin max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-space-xl mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12 sm:mb-16">
           {/* Column 1: Identity */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -14,20 +14,20 @@ export default function Footer() {
                 className="h-10 w-auto object-contain"
                 src="/logo.png"
               />
-              <span className="font-headline-sm text-lg sm:text-xl text-white font-bold">
+              <span className="font-display text-lg sm:text-xl text-white font-bold tracking-tight">
                 Haya&apos;s Dental Care
               </span>
             </div>
-            <p className="font-body-md text-xs sm:text-sm text-[#DDE5E2]/80 max-w-sm leading-relaxed">
-              A premier sanctuary for restorative aesthetics, precision oral surgery, and dental implantology under the expert clinical guidance of Dr. Aayisha Quddus.
+            <p className="text-xs sm:text-sm text-[#DDE5E2]/80 max-w-sm leading-relaxed">
+              A premier boutique sanctuary for restorative aesthetics, precision oral surgery, and dental implantology under the expert clinical guidance of Dr. Aayisha Quddus.
             </p>
             <div className="inline-flex items-center gap-3 p-3.5 rounded-2xl bg-[#0F5C5E]/30 border border-[#C9A96E]/40 shadow-sm w-fit">
               <span className="material-symbols-outlined text-[#C9A96E] text-[26px]">verified</span>
               <div>
-                <div className="font-label-caps text-[10px] text-[#C9A96E] tracking-wider uppercase font-semibold">
+                <div className="font-label-caps text-[10px] text-[#C9A96E] tracking-wider uppercase font-bold">
                   PMDC Verified Surgeon
                 </div>
-                <div className="font-label-ui text-xs font-semibold text-white">
+                <div className="text-xs font-semibold text-white">
                   PMDC # 10807-D · Reg # 60691
                 </div>
               </div>
@@ -36,7 +36,7 @@ export default function Footer() {
 
           {/* Column 2: Navigation */}
           <div className="lg:col-span-3 flex flex-col gap-3 sm:gap-4">
-            <h4 className="font-title-md text-sm sm:text-base text-white font-semibold">
+            <h4 className="font-display text-sm sm:text-base text-white font-bold">
               Clinical Navigation
             </h4>
             <nav className="flex flex-col gap-1.5">

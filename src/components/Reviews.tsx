@@ -1,43 +1,38 @@
 const starStyle = { fontVariationSettings: "'FILL' 1" };
 
-const reviews = [
+const featuredReview = {
+  quote:
+    "Dr. Aayisha performed two root canals and a zirconia crown for me. It was absolutely painless. Her clinic in Awami Plaza is cleaner than top private hospitals in Islamabad.",
+  name: "Col. (R) Tariq Mahmood",
+  location: "Gulshan-e-Abad, Rawalpindi",
+  treatment: "Root Canals & Zirconia Crown",
+};
+
+const supportingReviews = [
   {
     quote:
-      "\u201CDr. Aayisha performed two root canals and a zirconia crown for me. It was absolutely painless. Her clinic in Awami Plaza is cleaner than top private hospitals in Islamabad.\u201D",
-    initials: "TM",
-    name: "Col. (R) Tariq Mahmood",
-    location: "Gulshan-e-Abad, Rawalpindi",
-    avatarClasses:
-      "w-10 h-10 rounded-full bg-[#0F5C5E] text-white flex items-center justify-center font-label-ui font-bold shadow-xs flex-shrink-0",
-  },
-  {
-    quote:
-      "\u201CI got ceramic aesthetic braces done here. She explained the entire 14-month alignment timeline with complete honesty. No unnecessary procedures were ever pushed.\u201D",
-    initials: "FZ",
+      "I got ceramic aesthetic braces done here. She explained the entire 14-month alignment timeline with complete honesty. No unnecessary procedures were ever pushed.",
     name: "Dr. Fatima Zahra",
     location: "Bahria Town Phase 8",
-    avatarClasses:
-      "w-10 h-10 rounded-full bg-[#F0F5F4] text-[#0F5C5E] border border-[#0F5C5E]/30 flex items-center justify-center font-label-ui font-bold shadow-xs flex-shrink-0",
+    treatment: "Ceramic Aesthetic Braces",
   },
   {
     quote:
-      "\u201CTook my mother for Valplast flexible dentures. Dr. Aayisha\u2019s patience with elderly patients is unmatched. Very gentle, respectful, and transparent with pricing.\u201D",
-    initials: "MU",
+      "Took my mother for Valplast flexible dentures. Dr. Aayisha’s patience with elderly patients is unmatched. Very gentle, respectful, and transparent with pricing.",
     name: "Muhammad Usman",
     location: "Adiyala Road, Rawalpindi",
-    avatarClasses:
-      "w-10 h-10 rounded-full bg-[#083F42] text-[#C9A96E] border border-[#C9A96E]/30 flex items-center justify-center font-label-ui font-bold shadow-xs flex-shrink-0",
+    treatment: "Valplast Flexible Dentures",
   },
 ];
 
-function FiveStars() {
+function FiveStars({ size = 18 }: { size?: number }) {
   return (
-    <div className="flex text-[#C9A96E] text-[16px]">
+    <div className="flex text-[#C9A96E]">
       {Array.from({ length: 5 }).map((_, i) => (
         <span
           key={i}
-          className="material-symbols-outlined text-[18px] text-[#C9A96E] fill-current"
-          style={starStyle}
+          className="material-symbols-outlined fill-current"
+          style={{ ...starStyle, fontSize: `${size}px` }}
         >
           star
         </span>
@@ -49,67 +44,99 @@ function FiveStars() {
 export default function Reviews() {
   return (
     <section
-      className="w-full py-14 sm:py-18 md:py-20 px-4 sm:px-6 md:px-margin bg-[#FFFFFF] border-b border-[#DDE5E2]"
+      className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#FFFFFF] border-b border-[#DDE5E2]"
       id="reviews-section"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-space-lg">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="flex flex-col gap-1">
-            <div className="inline-flex items-center gap-1.5 text-[#C9A96E] font-label-caps text-[10px] sm:text-[11px] font-bold flex-wrap">
-              <span
-                className="material-symbols-outlined text-[18px] text-[#C9A96E] fill-current"
-                style={starStyle}
-              >
-                star
-              </span>
-              <span className="text-[#083F42]">
-                4.9 OUT OF 5.0 ON GOOGLE MAPS · 184 VERIFIED REVIEWS
-              </span>
+      <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-[#DDE5E2]">
+          <div className="flex flex-col gap-2 max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-[#C9A96E] font-label-caps text-xs sm:text-[13px] font-bold tracking-wider">
+              <FiveStars size={16} />
+              <span className="text-[#083F42]">4.9 / 5.0 RATING · 180+ VERIFIED GOOGLE REVIEWS</span>
             </div>
-            <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-[#083F42] font-semibold tracking-tight mt-1">
-              Patient Stories from Rawalpindi
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#083F42] font-semibold tracking-tight">
+              Patient Experiences
             </h2>
           </div>
+
           <a
-            className="inline-flex items-center gap-1.5 font-label-ui text-xs sm:text-sm font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors py-2 min-h-[44px]"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0F5C5E] hover:text-[#083F42] transition-colors py-2 group"
             href="https://maps.google.com"
             rel="noopener"
             target="_blank"
           >
             <span>Read all Google Reviews</span>
-            <span className="material-symbols-outlined text-[18px]">
+            <span className="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
               open_in_new
             </span>
           </a>
         </div>
 
-        {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {reviews.map((review) => (
-            <div
-              key={review.initials}
-              className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#DDE5E2] shadow-soft flex flex-col justify-between gap-4 hover:shadow-soft-lg hover:border-[#0F5C5E]/35 transition-all"
-            >
-              <div className="flex flex-col gap-3">
-                <FiveStars />
-                <p className="font-body-md text-xs sm:text-sm text-[#1E2929] leading-relaxed italic">
-                  {review.quote}
-                </p>
+        {/* Asymmetrical Editorial Testimonials Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          {/* Featured Large Testimonial (Left — 7 cols) */}
+          <div className="lg:col-span-7 p-8 sm:p-10 md:p-12 rounded-3xl bg-[#F8F6F1] border border-[#DDE5E2] flex flex-col justify-between gap-8 shadow-soft relative overflow-hidden">
+            <div className="flex flex-col gap-6 relative z-10">
+              <div className="flex items-center justify-between">
+                <FiveStars size={20} />
+                <span className="font-label-caps text-[10px] text-[#0F5C5E] font-bold tracking-wider uppercase bg-[#EEF6F5] px-3 py-1 rounded-full border border-[#0F5C5E]/15">
+                  {featuredReview.treatment}
+                </span>
               </div>
-              <div className="flex items-center gap-3 pt-3 border-t border-[#DDE5E2]">
-                <div className={review.avatarClasses}>{review.initials}</div>
-                <div className="flex flex-col min-w-0">
-                  <span className="font-label-ui text-xs sm:text-sm font-bold text-[#083F42] truncate">
-                    {review.name}
-                  </span>
-                  <span className="font-label-caps text-[10px] text-[#647070] truncate">
-                    {review.location}
-                  </span>
-                </div>
+
+              <blockquote className="font-display text-xl sm:text-2xl md:text-3xl text-[#083F42] font-normal leading-relaxed italic">
+                &ldquo;{featuredReview.quote}&rdquo;
+              </blockquote>
+            </div>
+
+            <div className="flex items-center gap-3.5 pt-6 border-t border-[#DDE5E2] relative z-10">
+              <div className="w-12 h-12 rounded-full bg-[#0F5C5E] text-white flex items-center justify-center font-display text-sm font-bold shadow-xs flex-shrink-0">
+                TM
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-base font-bold text-[#083F42]">
+                  {featuredReview.name}
+                </span>
+                <span className="text-xs text-[#647070]">
+                  {featuredReview.location}
+                </span>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Supporting Testimonials (Right — 5 cols) */}
+          <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
+            {supportingReviews.map((review) => (
+              <div
+                key={review.name}
+                className="p-6 sm:p-7 rounded-3xl bg-[#FFFFFF] border border-[#DDE5E2] flex flex-col justify-between gap-5 shadow-soft hover:shadow-soft-lg hover:border-[#0F5C5E]/30 transition-all duration-300 flex-1"
+              >
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <FiveStars size={16} />
+                    <span className="text-[10px] font-label-caps font-semibold text-[#647070] bg-[#F8F6F1] px-2.5 py-0.5 rounded-full border border-[#DDE5E2]">
+                      {review.treatment}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#1E2929] leading-relaxed italic">
+                    &ldquo;{review.quote}&rdquo;
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3 pt-3 border-t border-[#DDE5E2]">
+                  <div className="flex flex-col">
+                    <span className="text-xs sm:text-sm font-bold text-[#083F42]">
+                      {review.name}
+                    </span>
+                    <span className="text-[11px] text-[#647070]">
+                      {review.location}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

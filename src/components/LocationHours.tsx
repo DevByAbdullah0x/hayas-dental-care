@@ -3,22 +3,22 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 export default function LocationHours() {
   return (
     <section
-      className="w-full py-14 sm:py-18 md:py-20 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2]"
+      className="w-full py-18 sm:py-24 md:py-28 px-4 sm:px-6 md:px-margin bg-[#F8F6F1] border-b border-[#DDE5E2]"
       id="location-hours"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-space-xl items-stretch">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Weekly Timetable Card */}
-        <div className="lg:col-span-6 p-5 sm:p-7 md:p-8 rounded-3xl bg-[#FFFFFF] border border-[#DDE5E2] shadow-soft flex flex-col justify-between gap-5">
-          <div className="flex flex-col gap-1">
+        <div className="lg:col-span-6 p-6 sm:p-8 rounded-3xl bg-[#FFFFFF] border border-[#DDE5E2] shadow-soft flex flex-col justify-between gap-6">
+          <div className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
-              <span className="font-label-caps text-[10px] sm:text-[11px] text-[#0F5C5E] font-bold tracking-wider uppercase">
-                CLINICAL AVAILABILITY
+              <span className="font-label-caps text-xs text-[#0F5C5E] font-bold tracking-[0.2em] uppercase">
+                Clinical Availability
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#F0F5F4] text-[#0F5C5E] border border-[#0F5C5E]/20 font-label-caps text-[10px] sm:text-[11px] font-bold">
-                OPEN TODAY
+              <span className="px-3 py-1 rounded-full bg-[#EEF6F5] text-[#0F5C5E] border border-[#0F5C5E]/20 font-label-caps text-[11px] font-bold">
+                Open Today
               </span>
             </div>
-            <h3 className="font-headline-md text-xl sm:text-2xl font-semibold text-[#083F42] mt-1">
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#083F42] mt-1">
               Weekly Operating Schedule
             </h3>
           </div>

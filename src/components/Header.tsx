@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <header className="w-full bg-[#FFFFFF]/95 backdrop-blur-xl border-b border-[#DDE5E2] shadow-[0_2px_12px_rgba(8,63,66,0.04)] relative z-50">
-      <div className="h-16 sm:h-20 w-full px-4 sm:px-6 max-w-7xl mx-auto flex items-center justify-between gap-2 lg:gap-3 xl:gap-4">
+      <div className="h-16 sm:h-20 w-full px-4 sm:px-6 xl:px-8 max-w-7xl mx-auto flex items-center justify-between gap-2 xl:gap-4">
         {/* Brand Identity */}
         <Link
           href="#"
@@ -32,25 +32,25 @@ export default function Header() {
         >
           <img
             alt="Haya's Dental Care Logo"
-            className="h-8 sm:h-9 lg:h-9 xl:h-10 w-auto object-contain flex-shrink-0"
+            className="h-8 sm:h-9 xl:h-10 w-auto object-contain flex-shrink-0"
             src="/logo.png"
           />
           <div className="flex flex-col min-w-0">
-            <span className="font-headline-sm text-sm sm:text-base lg:text-base xl:text-lg text-[#083F42] font-semibold tracking-tight group-hover:text-[#0F5C5E] transition-colors leading-tight whitespace-nowrap">
+            <span className="font-headline-sm text-sm sm:text-base xl:text-lg text-[#083F42] font-semibold tracking-tight group-hover:text-[#0F5C5E] transition-colors leading-tight whitespace-nowrap">
               Haya&apos;s Dental Care
             </span>
-            <span className="font-label-caps text-[9px] text-[#647070] tracking-wider hidden xl:block truncate">
+            <span className="font-label-caps text-[9px] text-[#647070] tracking-wider hidden 2xl:block truncate">
               EST. 2019 · RAWALPINDI · DR. AAYISHA QUDDUS
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation (>= 1024px / lg) */}
-        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 flex-shrink-0">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 flex-shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.href}
-              className="text-[#1E2929] hover:text-[#0F5C5E] transition-colors font-label-ui text-[11px] xl:text-xs px-1.5 xl:px-2 py-1.5 rounded-lg hover:bg-[#F0F5F4] whitespace-nowrap font-medium"
+              className="text-[#1E2929] hover:text-[#0F5C5E] transition-colors text-[11px] xl:text-[13px] px-1.5 xl:px-2.5 py-1.5 rounded-full hover:bg-[#EEF6F5] whitespace-nowrap font-medium"
               href={link.href}
             >
               {link.label}
@@ -59,26 +59,20 @@ export default function Header() {
         </nav>
 
         {/* Action Cluster */}
-        <div className="flex items-center gap-1.5 lg:gap-2 xl:gap-2.5 flex-shrink-0">
-          {/* Shift status badge: only on ultra-wide >= 1440px to never crowd buttons */}
-          <div className="hidden 2xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F0F5F4] border border-[#0F5C5E]/20 text-[#0F5C5E] font-label-caps text-[10px] whitespace-nowrap font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] animate-pulse"></span>
-            <span>Evening Shift Active</span>
-          </div>
-
-          {/* Call button: icon-only on mobile < 640px, full pill on >= 640px */}
+        <div className="flex items-center gap-2 xl:gap-3 flex-shrink-0">
+          {/* Call button */}
           <a
-            className="inline-flex items-center justify-center gap-1.5 px-2.5 xl:px-3 py-1.5 sm:py-2 rounded-full bg-[#F8F6F1] border border-[#DDE5E2] text-[#083F42] font-label-ui text-xs hover:border-[#0F5C5E] hover:text-[#0F5C5E] transition-colors min-h-[40px] min-w-[40px]"
+            className="inline-flex items-center justify-center gap-1.5 px-2.5 xl:px-3 py-2 rounded-full bg-[#F8F6F1] border border-[#DDE5E2] text-[#083F42] text-xs hover:border-[#0F5C5E] hover:text-[#0F5C5E] transition-colors min-h-[38px] xl:min-h-[40px]"
             href="tel:03035452839"
             aria-label="Call clinic at 0303-5452839"
           >
             <span className="material-symbols-outlined text-[16px] text-[#0F5C5E]">call</span>
-            <span className="hidden md:inline whitespace-nowrap text-[11px] xl:text-xs font-semibold">0303-5452839</span>
+            <span className="hidden sm:inline lg:hidden xl:inline whitespace-nowrap text-xs font-semibold">0303-5452839</span>
           </a>
 
-          {/* Book Appointment CTA: visible on desktop >= 1024px */}
+          {/* Book Appointment CTA */}
           <a
-            className="hidden lg:inline-flex btn-primary items-center justify-center px-3.5 xl:px-4.5 py-2 sm:py-2.5 rounded-full font-label-ui text-xs font-semibold text-white min-h-[40px] whitespace-nowrap flex-shrink-0"
+            className="hidden lg:inline-flex btn-primary items-center justify-center px-3.5 xl:px-5 py-2 xl:py-2.5 rounded-full text-xs font-semibold text-white min-h-[38px] xl:min-h-[40px] whitespace-nowrap flex-shrink-0 shadow-soft"
             href="#smart-booking"
             onClick={closeMenu}
           >
