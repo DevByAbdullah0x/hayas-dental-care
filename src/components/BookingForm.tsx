@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, FormEvent } from "react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -214,7 +215,7 @@ export default function BookingForm() {
               className="flex-1 py-3.5 px-4 rounded-full btn-primary font-label-ui text-xs sm:text-sm font-bold flex items-center justify-center gap-2 text-white min-h-[48px]"
               type="submit"
             >
-              <span className="material-symbols-outlined text-[20px]">chat</span>
+              <WhatsAppIcon className="w-5 h-5 text-white" />
               <span>Book via WhatsApp (0303-5452839)</span>
             </button>
             <button

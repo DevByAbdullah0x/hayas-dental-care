@@ -1,3 +1,5 @@
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+
 export default function MobileBottomBar() {
   return (
     <aside
@@ -20,7 +22,7 @@ export default function MobileBottomBar() {
         target="_blank"
         aria-label="Chat on WhatsApp"
       >
-        <span className="material-symbols-outlined text-[18px] text-[#0F5C5E]">chat</span>
+        <WhatsAppIcon className="w-4.5 h-4.5 text-[#0F5C5E]" />
         <span className="mt-0.5">WhatsApp</span>
       </a>
 

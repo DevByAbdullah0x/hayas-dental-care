@@ -1,4 +1,5 @@
 import React from "react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Footer() {
   return (
@@ -87,7 +88,7 @@ export default function Footer() {
             <h4 className="font-title-md text-sm sm:text-base text-white font-semibold">
               Emergency &amp; Location
             </h4>
-            <div className="p-4 rounded-2xl bg-[#0F5C5E]/30 border border-[#C9A96E]/40 shadow-sm flex flex-col gap-1">
+            <div className="p-4 rounded-2xl bg-[#0F5C5E]/30 border border-[#C9A96E]/40 shadow-sm flex flex-col gap-1.5">
               <span className="font-label-caps text-[10px] text-[#C9A96E] tracking-wider uppercase font-bold flex items-center gap-1">
                 <span className="material-symbols-outlined text-[16px] text-[#C9A96E]">emergency</span> Urgent Toothache Hotline
               </span>
@@ -97,6 +98,15 @@ export default function Footer() {
               <span className="font-label-ui text-xs text-[#DDE5E2]/80">
                 Direct priority triage via WhatsApp or Call
               </span>
+              <a
+                className="inline-flex items-center gap-1.5 text-xs text-[#C9A96E] hover:text-white transition-colors font-semibold pt-1"
+                href="https://wa.me/923035452839?text=Assalam-o-Alaikum%20Dr.%20Aayisha%2C%20I%20have%20an%20urgent%20dental%20inquiry."
+                rel="noopener"
+                target="_blank"
+              >
+                <WhatsAppIcon className="w-3.5 h-3.5 text-[#C9A96E]" />
+                <span>Message on WhatsApp</span>
+              </a>
             </div>
             <div className="font-body-md text-xs text-[#DDE5E2]/80 flex items-start gap-2 pt-1 leading-relaxed">
               <span className="material-symbols-outlined text-[18px] text-[#C9A96E] flex-shrink-0 mt-0.5">location_on</span>

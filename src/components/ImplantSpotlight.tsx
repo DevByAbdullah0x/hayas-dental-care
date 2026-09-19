@@ -1,3 +1,5 @@
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+
 export default function ImplantSpotlight() {
   return (
     <section className="w-full bg-[#FFFFFF] py-14 sm:py-18 md:py-20 px-4 sm:px-6 md:px-margin border-b border-[#DDE5E2]" id="implants">
@@ -136,12 +138,13 @@ export default function ImplantSpotlight() {
                   </span>
                 </div>
                 <a
-                  className="btn-primary w-full sm:w-auto px-6 py-3.5 rounded-full font-label-ui text-xs sm:text-sm font-bold text-white shadow-md text-center min-h-[44px] flex items-center justify-center"
+                  className="btn-primary w-full sm:w-auto px-6 py-3.5 rounded-full font-label-ui text-xs sm:text-sm font-bold text-white shadow-md text-center min-h-[44px] flex items-center justify-center gap-2"
                   href="https://wa.me/923035452839?text=Hello%20Dr.%20Aayisha%2C%20I%20would%20like%20to%20consult%20regarding%20Dental%20Implants."
                   rel="noopener"
                   target="_blank"
                 >
-                  Consult on Implants
+                  <WhatsAppIcon className="w-4 h-4 text-white" />
+                  <span>Consult on WhatsApp</span>
                 </a>
               </div>
             </div>

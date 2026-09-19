@@ -11,6 +11,7 @@ import Reviews from "@/components/Reviews";
 import LocationHours from "@/components/LocationHours";
 import BookingForm from "@/components/BookingForm";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -59,6 +60,9 @@ export default function Home() {
 
       {/* Mobile Bottom Quick Action Bar */}
       <MobileBottomBar />
+
+      {/* Desktop Floating WhatsApp Button */}
+      <FloatingWhatsApp />
 
       {/* Footer */}
       <Footer />

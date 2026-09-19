@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -120,7 +121,7 @@ export default function Header() {
                 rel="noopener"
                 onClick={closeMenu}
               >
-                <span className="material-symbols-outlined text-[18px] text-[#0F5C5E]">chat</span>
+                <WhatsAppIcon className="w-4 h-4 text-[#0F5C5E]" />
                 <span>WhatsApp</span>
               </a>
             </div>

@@ -1,3 +1,5 @@
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+
 export default function LocationHours() {
   return (
     <section
@@ -137,7 +139,7 @@ export default function LocationHours() {
               rel="noopener"
               target="_blank"
             >
-              <span className="material-symbols-outlined text-[18px] text-[#0F5C5E]">near_me</span>
+              <WhatsAppIcon className="w-4 h-4 text-[#0F5C5E]" />
               <span>Request WhatsApp Pin</span>
             </a>
           </div>

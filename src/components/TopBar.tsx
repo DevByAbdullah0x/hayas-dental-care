@@ -1,3 +1,5 @@
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+
 export default function TopBar() {
   return (
     <aside className="w-full bg-[#083F42] border-b border-[#0F5C5E]/40 text-[#DDE5E2] font-label-caps tracking-wider text-xs overflow-hidden">
@@ -26,13 +28,13 @@ export default function TopBar() {
             <span>0303-5452839</span>
           </a>
           <a
-            className="hidden sm:flex items-center gap-1.5 text-[#C9A96E] hover:text-white transition-colors py-1 min-h-[32px] text-[11px] sm:text-xs whitespace-nowrap"
+            className="hidden sm:flex items-center gap-1.5 text-[#C9A96E] hover:text-white transition-colors py-1 min-h-[32px] text-[11px] sm:text-xs whitespace-nowrap font-medium"
             href="https://wa.me/923035452839"
             rel="noopener"
             target="_blank"
             aria-label="Chat with Dr. Aayisha on WhatsApp"
           >
-            <span className="material-symbols-outlined text-[14px] text-[#C9A96E]">chat</span>
+            <WhatsAppIcon className="w-3.5 h-3.5 text-[#C9A96E]" />
             <span>WhatsApp Doctor</span>
           </a>
         </div>
