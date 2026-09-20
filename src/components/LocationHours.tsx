@@ -94,22 +94,32 @@ export default function LocationHours() {
             A Business Profile is essential for accurate map linking, local SEO,
             Google Reviews aggregation, and Knowledge Panel visibility.
           */}
-          <div className="w-full h-40 sm:h-44 rounded-2xl relative overflow-hidden border border-[#DDE5E2]">
+          <a
+            href="https://www.google.com/maps/search/Haya's+Dental+Care+Awami+Plaza+Adiyala+Road+Rawalpindi/@33.5298,73.0509,17z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full h-40 sm:h-44 rounded-2xl relative overflow-hidden border border-[#DDE5E2] block group cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+            aria-label="Open Haya's Dental Care location in Google Maps"
+          >
             <iframe
-              className="w-full h-full border-0"
+              className="w-full h-full border-0 pointer-events-none"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1200!2d73.0509!3d33.5298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spk!4v1695000000000"
+              src="https://maps.google.com/maps?q=33.5298,73.0509+(Haya%27s+Dental+Care)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               title="Haya's Dental Care location — Awami Plaza, Adiyala Road, Rawalpindi"
-              allow="fullscreen"
+              tabIndex={-1}
             />
-            <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-[#083F42]/90 backdrop-blur-md text-white font-label-caps text-[10px] sm:text-[11px] font-bold shadow-sm flex items-center gap-1.5 border border-white/20 pointer-events-none">
+            <div className="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md text-[#0F5C5E] font-label-caps text-[10px] font-bold shadow-sm flex items-center gap-1 border border-[#DDE5E2] group-hover:bg-[#0F5C5E] group-hover:text-white transition-colors">
+              <span>View on Maps</span>
+              <span className="material-symbols-outlined text-[13px]">open_in_new</span>
+            </div>
+            <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:right-auto px-3 py-1.5 rounded-xl bg-[#083F42]/95 backdrop-blur-md text-white font-label-caps text-[10px] sm:text-[11px] font-bold shadow-sm flex items-center gap-1.5 border border-white/20">
               <span className="material-symbols-outlined text-[#C9A96E] text-[16px] flex-shrink-0">
                 location_on
               </span>
               <span className="truncate">Opposite Shell Fuel Station, Near Sanam Chowk</span>
             </div>
-          </div>
+          </a>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-[#647070]">
             <div className="flex items-center gap-2">
