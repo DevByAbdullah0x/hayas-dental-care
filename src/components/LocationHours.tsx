@@ -86,13 +86,24 @@ export default function LocationHours() {
             </h3>
           </div>
 
-          <div
-            className="w-full h-40 sm:h-44 rounded-2xl bg-cover bg-center shadow-inner relative overflow-hidden flex items-end p-3 border border-[#DDE5E2]"
-            style={{
-              backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdXCkwbhLMj37pST2x8tUibYDTCFQUdKrfi4pIeDKM6fL1unBUy3KM_vrIRAJHT5zq0V6Q5mPZmElRCjb8k4tj_tB-3SeVK5duQPWleuu4HMC3wI9Uh7MDW36xVmTAAwytsnIkuiGgd6BHTBrwkK8Jjd8RFWXOXRb84Z0tIhQgphzf_xeYD6eYplfSx-kn_pRxTRubI_EHTLKB3Hp-EP31OnzoHhf22y8hlLj2L1Lfh60OqoX79isD')`,
-            }}
-          >
-            <div className="px-3 py-1.5 rounded-xl bg-[#083F42]/90 backdrop-blur-md text-white font-label-caps text-[10px] sm:text-[11px] font-bold shadow-sm flex items-center gap-1.5 border border-white/20">
+          {/*
+            TODO: Create a Google Business Profile for "Haya's Dental Care" at
+            Basement D, Awami Plaza, Adiyala Road, Rawalpindi 46000.
+            Once created, replace the embed query below with the Place ID:
+            https://www.google.com/maps/embed/v1/place?key=API_KEY&q=place_id:PLACE_ID
+            A Business Profile is essential for accurate map linking, local SEO,
+            Google Reviews aggregation, and Knowledge Panel visibility.
+          */}
+          <div className="w-full h-40 sm:h-44 rounded-2xl relative overflow-hidden border border-[#DDE5E2]">
+            <iframe
+              className="w-full h-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1200!2d73.0509!3d33.5298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spk!4v1695000000000"
+              title="Haya's Dental Care location — Awami Plaza, Adiyala Road, Rawalpindi"
+              allow="fullscreen"
+            />
+            <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-[#083F42]/90 backdrop-blur-md text-white font-label-caps text-[10px] sm:text-[11px] font-bold shadow-sm flex items-center gap-1.5 border border-white/20 pointer-events-none">
               <span className="material-symbols-outlined text-[#C9A96E] text-[16px] flex-shrink-0">
                 location_on
               </span>
@@ -126,7 +137,7 @@ export default function LocationHours() {
           <div className="flex flex-col sm:flex-row gap-3 pt-2 border-t border-[#DDE5E2]">
             <a
               className="flex-1 py-3.5 px-4 rounded-xl btn-primary font-label-ui text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 text-white min-h-[48px] text-center shadow-sm"
-              href="https://maps.google.com/?q=Awami+Plaza+Adiyala+Road+Rawalpindi"
+              href="https://www.google.com/maps/search/Haya's+Dental+Care+Awami+Plaza+Adiyala+Road+Rawalpindi/@33.5298,73.0509,17z"
               rel="noopener"
               target="_blank"
             >
