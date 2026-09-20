@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import FacebookIcon from "@/components/FacebookIcon";
+import InstagramIcon from "@/components/InstagramIcon";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -291,6 +293,35 @@ export default function Header() {
                 <span>Evening Clinic: 3:30 PM – 9:30 PM</span>
               </div>
               <span>Basement D, Awami Plaza, Adiyala Rd, Rawalpindi</span>
+            </div>
+
+            {/* Social Channels in Drawer */}
+            <div className="flex items-center justify-between p-3 rounded-xl bg-[#F0F5F4]/60 border border-[#0F5C5E]/15 text-xs text-[#083F42]">
+              <span className="font-semibold font-label-caps text-[11px] tracking-wider uppercase text-[#0F5C5E]">
+                Follow Our Cases
+              </span>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://www.facebook.com/p/Hayas-Dental-Care-HDC-100063940721569/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-8 h-8 rounded-lg bg-white border border-[#DDE5E2] text-[#0F5C5E] hover:bg-[#0F5C5E] hover:text-white flex items-center justify-center transition-colors shadow-2xs"
+                  title="Facebook"
+                >
+                  <FacebookIcon className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/hayasdentalcare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-8 h-8 rounded-lg bg-white border border-[#DDE5E2] text-[#0F5C5E] hover:bg-[#0F5C5E] hover:text-white flex items-center justify-center transition-colors shadow-2xs"
+                  title="Instagram"
+                >
+                  <InstagramIcon className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
 
             {/* Primary Action Button */}

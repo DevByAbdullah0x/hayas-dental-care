@@ -1,5 +1,7 @@
 import React from "react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import FacebookIcon from "@/components/FacebookIcon";
+import InstagramIcon from "@/components/InstagramIcon";
 
 export default function Footer() {
   return (
@@ -30,6 +32,45 @@ export default function Footer() {
                 <div className="text-xs font-semibold text-white">
                   PMDC # 10807-D · Reg # 60691
                 </div>
+              </div>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="flex flex-col gap-2 pt-1">
+              <span className="font-label-caps text-[10px] text-[#C9A96E] tracking-wider uppercase font-bold">
+                Follow &amp; Connect
+              </span>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="https://www.facebook.com/p/Hayas-Dental-Care-HDC-100063940721569/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Haya's Dental Care on Facebook"
+                  className="w-9 h-9 rounded-xl bg-[#0F5C5E]/40 border border-[#0F5C5E] hover:border-[#C9A96E] hover:bg-[#0F5C5E] text-[#DDE5E2] hover:text-white flex items-center justify-center transition-all shadow-sm"
+                  title="Facebook: Haya's Dental Care"
+                >
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/hayasdentalcare/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Haya's Dental Care on Instagram"
+                  className="w-9 h-9 rounded-xl bg-[#0F5C5E]/40 border border-[#0F5C5E] hover:border-[#C9A96E] hover:bg-[#0F5C5E] text-[#DDE5E2] hover:text-white flex items-center justify-center transition-all shadow-sm"
+                  title="Instagram: @hayasdentalcare"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://wa.me/923035452839?text=Assalam-o-Alaikum%20Dr.%20Aayisha%2C%20I%20would%20like%20to%20inquire%20about%20an%20appointment."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with Haya's Dental Care on WhatsApp"
+                  className="w-9 h-9 rounded-xl bg-[#0F5C5E]/40 border border-[#0F5C5E] hover:border-[#C9A96E] hover:bg-[#0F5C5E] text-[#DDE5E2] hover:text-white flex items-center justify-center transition-all shadow-sm"
+                  title="WhatsApp"
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -128,6 +169,29 @@ export default function Footer() {
             <a className="hover:text-[#C9A96E] transition-colors py-1" href="#location-hours">
               Find Clinic
             </a>
+            <span className="text-[#DDE5E2]/30 hidden sm:inline">|</span>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.facebook.com/p/Hayas-Dental-Care-HDC-100063940721569/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="hover:text-[#C9A96E] transition-colors"
+                title="Facebook"
+              >
+                <FacebookIcon className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://www.instagram.com/hayasdentalcare/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="hover:text-[#C9A96E] transition-colors"
+                title="Instagram"
+              >
+                <InstagramIcon className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

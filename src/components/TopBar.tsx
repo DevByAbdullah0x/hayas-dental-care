@@ -1,4 +1,6 @@
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import FacebookIcon from "@/components/FacebookIcon";
+import InstagramIcon from "@/components/InstagramIcon";
 
 export default function TopBar() {
   return (
@@ -37,6 +39,29 @@ export default function TopBar() {
             <WhatsAppIcon className="w-3.5 h-3.5 text-[#C9A96E]" />
             <span>WhatsApp Doctor</span>
           </a>
+          <span className="hidden lg:inline text-white/20">|</span>
+          <div className="hidden lg:flex items-center gap-2">
+            <a
+              className="text-[#DDE5E2]/70 hover:text-[#C9A96E] transition-colors p-1"
+              href="https://www.facebook.com/p/Hayas-Dental-Care-HDC-100063940721569/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Haya's Dental Care Facebook"
+              title="Facebook"
+            >
+              <FacebookIcon className="w-3.5 h-3.5" />
+            </a>
+            <a
+              className="text-[#DDE5E2]/70 hover:text-[#C9A96E] transition-colors p-1"
+              href="https://www.instagram.com/hayasdentalcare/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Haya's Dental Care Instagram"
+              title="Instagram"
+            >
+              <InstagramIcon className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </div>
     </aside>
